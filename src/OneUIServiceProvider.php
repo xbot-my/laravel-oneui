@@ -7,6 +7,7 @@ namespace XBot\OneUI;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
+use XBot\OneUI\Console\Commands\OneUIExamplesCommand;
 
 final class OneUIServiceProvider extends ServiceProvider
 {
@@ -20,6 +21,7 @@ final class OneUIServiceProvider extends ServiceProvider
         $this->bootResources();
         $this->bootBladeComponents();
         $this->bootPublishing();
+        $this->bootCommands();
     }
 
     private function bootResources(): void
@@ -61,6 +63,15 @@ final class OneUIServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../resources/assets' => public_path('vendor/oneui'),
             ], 'oneui-assets');
+        }
+    }
+
+    private function bootCommands(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                OneUIExamplesCommand::class,
+            ]);
         }
     }
 }
