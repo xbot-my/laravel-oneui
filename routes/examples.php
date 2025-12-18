@@ -21,4 +21,5 @@ Route::prefix('oneui')->group(function () {
     Route::get('/navigation', fn() => view('oneui.navigation'))->name('oneui.navigation');
     Route::get('/feedback', fn() => view('oneui.feedback'))->name('oneui.feedback');
     Route::get('/layout', fn() => view('oneui.layout'))->name('oneui.layout');
+    Route::get('/stats', fn() => view('oneui.stats'))->name('oneui.stats');
 });

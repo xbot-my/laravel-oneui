@@ -19,3 +19,5 @@
     :active="$currentPath === 'oneui/feedback'">Feedback</x-oneui::nav-item>
 <x-oneui::nav-item href="/oneui/layout" icon="si si-screen-desktop"
     :active="$currentPath === 'oneui/layout'">Layout</x-oneui::nav-item>
+<x-oneui::nav-item href="/oneui/stats" icon="si si-graph"
+    :active="$currentPath === 'oneui/stats'">Stats</x-oneui::nav-item>
