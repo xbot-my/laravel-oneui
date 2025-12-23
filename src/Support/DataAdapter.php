@@ -9,10 +9,10 @@ use Illuminate\Support\Collection;
 use XBot\OneUI\Contracts\DataSourceContract;
 
 /**
- * 数据适配器
+ * Data Adapter
  *
- * 统一处理各种数据源（array、Collection、Eloquent、Paginator），
- * 将其转换为统一的 ItemCollection 格式。
+ * Uniformly handles various data sources (array, Collection, Eloquent, Paginator),
+ * converting them to a unified ItemCollection format.
  */
 class DataAdapter implements DataSourceContract
 {
@@ -34,7 +34,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 处理数据源
+     * Process data source
      */
     protected function processSource(): void
     {
@@ -79,7 +79,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 规范化项目数组
+     * Normalize item array
      */
     protected function normalizeItems(array $items): array
     {
@@ -93,7 +93,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 转换为数组
+     * Convert to array
      */
     public function toArray(): array
     {
@@ -101,7 +101,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 转换为项目集合
+     * Convert to ItemCollection
      */
     public function toItems(array $config = []): ItemCollection
     {
@@ -109,7 +109,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 获取项目数量
+     * Get item count
      */
     public function count(): int
     {
@@ -117,7 +117,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 是否为空
+     * Check if is empty
      */
     public function isEmpty(): bool
     {
@@ -125,7 +125,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 是否有分页器
+     * Check if has paginator
      */
     public function hasPaginator(): bool
     {
@@ -133,7 +133,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 获取分页器
+     * Get paginator
      */
     public function getPaginator(): ?LengthAwarePaginator
     {
@@ -141,7 +141,7 @@ class DataAdapter implements DataSourceContract
     }
 
     /**
-     * 设置标识符键
+     * Set identifier key
      */
     public function setIdentifierKey(string $key): self
     {

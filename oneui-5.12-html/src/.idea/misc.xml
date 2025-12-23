@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="8c711298-5466-4430-b607-18b43dcaae64" />
+  </component>
+  <component name="MaterialThemeProjectNewConfig">
+    <option name="metadata">
+      <MTProjectMetadataState>
+        <option name="migrated" value="true" />
+        <option name="pristineConfig" value="false" />
+        <option name="userId" value="-5964e2fd:1922b786b59:-7ffc" />
+      </MTProjectMetadataState>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id>HTTP 客户端</id>
+          </State>
+          <State>
+            <id>JSON 和 JSON5</id>
+          </State>
+          <State>
+            <id>MySQL</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>代码样式PHP</id>
+          </State>
+          <State>
+            <id>未定义的符号PHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>用户定义</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+</project>

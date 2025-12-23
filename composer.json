@@ -1,82 +1,86 @@
 {
-  "name": "xbot-my/laravel-oneui",
-  "description": "OneUI Blade Component for Laravel.",
-  "keywords": [
-    "laravel",
-    "laravel-package",
-    "oneui",
-    "blade"
-  ],
-  "homepage": "https://github.com/xbot-my/laravel-oneui",
-  "type": "library",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Roy",
-      "email": "admin@xbot.my",
-      "homepage": "https://xbot.my"
-    }
-  ],
-  "require": {
-    "php": "^8.2",
-    "illuminate/support": "^11.0|^12.0",
-    "illuminate/view": "^11.0|^12.0",
-    "illuminate/filesystem": "^11.0|^12.0"
-  },
-  "require-dev": {
-    "pestphp/pest": "^4.0",
-    "pestphp/pest-plugin-laravel": "^4.0",
-    "pestphp/pest-plugin-browser": "^4.1",
-    "orchestra/testbench": "^9.0|^10.0",
-    "laravel/pint": "^1.26"
-  },
-  "autoload": {
-    "psr-4": {
-      "XBot\\OneUI\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "XBot\\OneUI\\Tests\\": "tests/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "XBot\\OneUI\\OneUIServiceProvider"
-      ],
-      "aliases": {
-        "OneUI": "XBot\\OneUI\\Facades\\OneUI"
-      }
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "allow-plugins": {
-      "pestphp/pest-plugin": true
-    }
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "@clear",
-      "@prepare"
+    "name": "xbot-my/laravel-oneui",
+    "description": "OneUI Blade Component for Laravel.",
+    "keywords": [
+        "laravel",
+        "laravel-package",
+        "oneui",
+        "blade"
     ],
-    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
-    "prepare": "@php vendor/bin/testbench package:discover --ansi",
-    "build": "@php vendor/bin/testbench workbench:build --ansi",
-    "serve": [
-      "Composer\\Config::disableProcessTimeout",
-      "@build",
-      "@php vendor/bin/testbench serve --ansi"
+    "homepage": "https://github.com/xbot-my/laravel-oneui",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roy",
+            "email": "admin@xbot.my",
+            "homepage": "https://xbot.my"
+        }
     ],
-    "lint": [
-      "@php vendor/bin/pint --ansi",
-      "@php vendor/bin/phpstan analyse --verbose --ansi"
-    ],
-    "test": [
-      "@clear",
-      "@php vendor/bin/pest"
-    ]
-  }
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/view": "^11.0|^12.0",
+        "illuminate/filesystem": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "pestphp/pest-plugin-browser": "^4.1",
+        "orchestra/testbench": "^9.0|^10.0",
+        "laravel/pint": "^1.26",
+        "laravel/boost": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "XBot\\OneUI\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XBot\\OneUI\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "XBot\\OneUI\\OneUIServiceProvider"
+            ],
+            "aliases": {
+                "OneUI": "XBot\\OneUI\\Facades\\OneUI"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve --ansi"
+        ],
+        "lint": [
+            "@php vendor/bin/pint --ansi",
+            "@php vendor/bin/phpstan analyse --verbose --ansi"
+        ],
+        "test": [
+            "@clear",
+            "@php vendor/bin/pest"
+        ]
+    }
 }

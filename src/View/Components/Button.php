@@ -25,6 +25,8 @@ class Button extends Component
         public ?string $href = null,
         public bool $disabled = false,
         public bool $block = false,
+        public bool $square = false,
+        public bool $pill = false,
     ) {
         if ($this->href) {
             $this->tag = 'a';
@@ -47,6 +49,13 @@ class Button extends Component
         // Size
         if ($this->size) {
             $classes[] = "btn-{$this->size}";
+        }
+
+        // Shape
+        if ($this->square) {
+            $classes[] = 'rounded-0';
+        } elseif ($this->pill) {
+            $classes[] = 'rounded-pill';
         }
 
         // Block

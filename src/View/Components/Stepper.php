@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Stepper 步骤条组件
+ * Stepper Component
  *
  * Usage:
  * <x-oneui::stepper :steps="[
@@ -35,7 +35,7 @@ class Stepper extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.stepper');
     }

@@ -7,8 +7,8 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 **Layout Components**
-- `page` - Full page layout with sidebar, header, footer
-- `block` - OneUI content block with header and options
+- `page` - Full page layout with a sidebar, header, footer
+- `block` - OneUI content block with a header and options
 - `hero` - Hero section with background image support
 - `container` - Bootstrap container
 - `row` / `col` - Grid system with responsive breakpoints

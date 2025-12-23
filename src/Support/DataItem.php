@@ -7,9 +7,9 @@ namespace XBot\OneUI\Support;
 use XBot\OneUI\Contracts\ItemRenderable;
 
 /**
- * 数据项封装类
+ * Data Item Wrapper
  *
- * 封装单个列表项（如表格行、菜单项），提供统一的访问接口。
+ * Wraps a single list item (such as a table row, menu item), providing a unified access interface.
  */
 class DataItem implements ItemRenderable
 {
@@ -24,7 +24,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 从混合类型创建 DataItem
+     * Create DataItem from mixed type
      */
     public static function make(mixed $item, string $identifierKey = 'id'): self
     {
@@ -44,7 +44,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 获取指定键的值，支持点号分隔的嵌套键
+     * Get value by key, supports dot notation for nested keys
      */
     public function getValue(string $key, mixed $default = null): mixed
     {
@@ -52,7 +52,7 @@ class DataItem implements ItemRenderable
             return $this->data[$key];
         }
 
-        // 支持点号嵌套访问：user.name => $data['user']['name']
+        // Support dot notation: user.name => $data['user']['name']
         if (str_contains($key, '.')) {
             $value = $this->data;
             foreach (explode('.', $key) as $segment) {
@@ -69,7 +69,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 检查键是否存在
+     * Check if key exists
      */
     public function hasKey(string $key): bool
     {
@@ -93,7 +93,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 获取唯一标识符
+     * Get unique identifier
      */
     public function getIdentifier(): mixed
     {
@@ -101,7 +101,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 转换为数组
+     * Convert to array
      */
     public function toArray(): array
     {
@@ -109,7 +109,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 转换为 JSON 字符串
+     * Convert to JSON string
      */
     public function toJson(int $options = 0): string
     {
@@ -117,7 +117,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 魔术方法：属性访问
+     * Magic method: property access
      */
     public function __get(string $name): mixed
     {
@@ -125,7 +125,7 @@ class DataItem implements ItemRenderable
     }
 
     /**
-     * 魔术方法：属性检查
+     * Magic method: property check
      */
     public function __isset(string $name): bool
     {

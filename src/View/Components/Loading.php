@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Loading 组件（全屏加载遮罩）
+ * Loading Component (Full-screen loading overlay)
  *
  * Usage:
  * <x-oneui::loading />
@@ -22,7 +22,7 @@ class Loading extends Component
     ) {
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.loading');
     }

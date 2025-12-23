@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Select2 增强下拉组件
+ * Select2 Enhanced Dropdown Component
  *
  * Usage:
  * <x-oneui::select2 name="country" :options="$countries" />
@@ -30,7 +30,7 @@ class Select2 extends Component
         $this->id = $id ?? $name;
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.select2');
     }

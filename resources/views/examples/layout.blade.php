@@ -73,6 +73,55 @@ CODE;
                 </div>
             </x-oneui::code-example>
 
+            @php
+            $blockThemedCode = <<<'CODE'
+<x-oneui::block title="Primary" themed header-color="primary">
+    Content here
+</x-oneui::block>
+
+<x-oneui::block title="Success Light" themed header-color="success" header-shade="light">
+    Content here
+</x-oneui::block>
+CODE;
+            @endphp
+            <x-oneui::code-example title="Themed Blocks" :code="$blockThemedCode">
+                <div class="row">
+                    <div class="col-md-6 col-xl-3">
+                        <x-oneui::block title="Primary" themed header-color="primary">
+                            <p class="mb-0">Primary themed block.</p>
+                        </x-oneui::block>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <x-oneui::block title="Success" themed header-color="success">
+                            <p class="mb-0">Success themed block.</p>
+                        </x-oneui::block>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <x-oneui::block title="Info Light" themed header-color="info" header-shade="light">
+                            <p class="mb-0">Info light themed block.</p>
+                        </x-oneui::block>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <x-oneui::block title="Warning Dark" themed header-color="warning" header-shade="dark">
+                            <p class="mb-0">Warning dark themed block.</p>
+                        </x-oneui::block>
+                    </div>
+                </div>
+            </x-oneui::code-example>
+
+            @php
+            $blockTransparentCode = <<<'CODE'
+<x-oneui::block title="Transparent" transparent>
+    No background styling
+</x-oneui::block>
+CODE;
+            @endphp
+            <x-oneui::code-example title="Transparent Block" :code="$blockTransparentCode">
+                <x-oneui::block title="Transparent Block" transparent>
+                    <p class="mb-0">Perfect for sidebars and overlays.</p>
+                </x-oneui::block>
+            </x-oneui::code-example>
+
             <h2 class="content-heading">Container & Grid</h2>
 
             @php

@@ -22,7 +22,7 @@ class Pagination extends Component
         };
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.pagination');
     }

@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Spinner 组件
+ * Spinner Component
  *
  * Usage:
  * <x-oneui::spinner />
@@ -36,7 +36,7 @@ class Spinner extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.spinner');
     }

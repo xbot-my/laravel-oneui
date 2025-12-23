@@ -13,9 +13,9 @@ use XBot\OneUI\Support\Formatters\DateFormatter;
 use XBot\OneUI\Support\ItemCollection;
 
 /**
- * Table 组件
+ * Table Component
  *
- * 支持数据驱动的表格渲染，自动处理 array、Collection、Eloquent、Paginator。
+ * Supports data-driven table rendering, automatically handles array, Collection, Eloquent, and Paginator.
  */
 class Table extends Component
 {
@@ -46,7 +46,7 @@ class Table extends Component
     }
 
     /**
-     * 初始化数据
+     * Initialize data
      */
     protected function initializeData(): void
     {
@@ -57,7 +57,7 @@ class Table extends Component
     }
 
     /**
-     * 处理列配置
+     * Process column configuration
      */
     protected function processColumns(): void
     {
@@ -85,7 +85,7 @@ class Table extends Component
     }
 
     /**
-     * 格式化标签
+     * Format label
      */
     protected function formatLabel(string $key): string
     {
@@ -93,7 +93,7 @@ class Table extends Component
     }
 
     /**
-     * 是否有数据
+     * Check if has data
      */
     public function hasData(): bool
     {
@@ -101,7 +101,7 @@ class Table extends Component
     }
 
     /**
-     * 获取单元格值
+     * Get cell value
      */
     public function getCellValue(DataItem $row, array $col): mixed
     {
@@ -109,7 +109,7 @@ class Table extends Component
     }
 
     /**
-     * 格式化单元格值
+     * Format cell value
      */
     public function formatCellValue(mixed $value, array $col): string
     {
@@ -117,14 +117,14 @@ class Table extends Component
             return '';
         }
 
-        // 日期格式化
+        // Date formatting
         if (!empty($col['format']) && $col['format'] === 'date' && $value) {
             $formatter = new DateFormatter;
 
             return $formatter->format($value, $col);
         }
 
-        // 货币格式化
+        // Currency formatting
         if (!empty($col['format']) && $col['format'] === 'currency') {
             $formatter = new CurrencyFormatter;
 
@@ -135,7 +135,34 @@ class Table extends Component
     }
 
     /**
-     * 是否渲染为 Badge
+     * Sanitize HTML to prevent XSS attacks
+     *
+     * Allows only safe HTML tags and strips all others.
+     * Use this method when displaying user-generated HTML content.
+     */
+    public function sanitizeHtml(?string $html, array $col = []): string
+    {
+        if ($html === null || $html === '') {
+            return '';
+        }
+
+        // Get allowed tags from column config, or use default safe tags
+        $allowedTags = $col['allowedTags'] ?? '<p><br><strong><em><b><i><u><a><ul><ol><li><span><div><h1><h2><h3><h4><h5><h6>';
+
+        // Strip dangerous tags and attributes
+        $cleaned = strip_tags($html, $allowedTags);
+
+        // Additional sanitization: remove onclick, onerror, etc.
+        $cleaned = preg_replace('/\s*on\w+\s*=\s*["\'][^"\']*["\']/', '', $cleaned);
+
+        // Remove javascript: protocol
+        $cleaned = preg_replace('/(<a\s[^>]*href\s*=\s*["\'])javascript:[^"\']*(["\'])/i', '$1#$2', $cleaned);
+
+        return $cleaned;
+    }
+
+    /**
+     * Check if should render as Badge
      */
     public function shouldRenderBadge(array $col): bool
     {
@@ -143,7 +170,7 @@ class Table extends Component
     }
 
     /**
-     * 获取 Badge 类型
+     * Get Badge type
      */
     public function getBadgeType(mixed $value, array $col): string
     {
@@ -155,7 +182,7 @@ class Table extends Component
     }
 
     /**
-     * 获取表格 CSS 类
+     * Get table CSS classes
      */
     public function tableClasses(): string
     {
@@ -180,7 +207,7 @@ class Table extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.table');
     }

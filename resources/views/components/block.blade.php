@@ -1,6 +1,6 @@
 <div class="{{ $blockClasses() }}" {{ $attributes }}>
     @if($title || isset($header))
-        <div class="block-header block-header-default">
+        <div class="block-header {{ $headerClasses() }}">
             @if($title)
                 <h3 class="block-title">{{ $title }}</h3>
             @endif

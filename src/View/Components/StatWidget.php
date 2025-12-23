@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * StatWidget 统计卡片组件
+ * StatWidget Component
  *
  * Usage:
  * <x-oneui::stat-widget value="$12,682" label="Earnings" icon="fa fa-arrow-up" />
@@ -56,7 +56,7 @@ class StatWidget extends Component
         return $this->href ? 'a' : 'div';
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.stat-widget');
     }

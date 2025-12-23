@@ -7,9 +7,9 @@ namespace XBot\OneUI\Support\Formatters;
 use XBot\OneUI\Contracts\FormatterContract;
 
 /**
- * 货币格式化器
+ * Currency Formatter
  *
- * 将数值格式化为货币字符串。
+ * Formats numeric values into currency strings.
  */
 class CurrencyFormatter implements FormatterContract
 {
@@ -18,10 +18,10 @@ class CurrencyFormatter implements FormatterContract
     protected int $defaultDecimals = 2;
 
     /**
-     * 格式化货币
+     * Format currency
      *
-     * @param  mixed  $value  数值
-     * @param  array  $options  选项（currencySymbol、decimals、thousandsSeparator、decimalPoint）
+     * @param  mixed  $value  Numeric value
+     * @param  array  $options  Options (currencySymbol, decimals, thousandsSeparator, decimalPoint)
      */
     public function format(mixed $value, array $options = []): string
     {
@@ -36,7 +36,7 @@ class CurrencyFormatter implements FormatterContract
 
         $formatted = number_format((float) $value, $decimals, $decimalPoint, $thousandsSeparator);
 
-        // 支持符号位置配置
+        // Support symbol position configuration
         $symbolPosition = $options['symbolPosition'] ?? 'before';
 
         return $symbolPosition === 'after'
@@ -45,7 +45,7 @@ class CurrencyFormatter implements FormatterContract
     }
 
     /**
-     * 设置默认货币符号
+     * Set default currency symbol
      */
     public function setDefaultSymbol(string $symbol): self
     {

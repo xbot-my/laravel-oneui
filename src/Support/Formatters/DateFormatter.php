@@ -8,19 +8,19 @@ use Carbon\Carbon;
 use XBot\OneUI\Contracts\FormatterContract;
 
 /**
- * 日期格式化器
+ * Date Formatter
  *
- * 将日期值格式化为指定格式的字符串。
+ * Formats date values to specified format strings.
  */
 class DateFormatter implements FormatterContract
 {
     protected string $defaultFormat = 'Y-m-d';
 
     /**
-     * 格式化日期
+     * Format date
      *
-     * @param  mixed  $value  日期值
-     * @param  array  $options  选项（dateFormat、timezone）
+     * @param  mixed  $value  Date value
+     * @param  array  $options  Options (dateFormat, timezone)
      */
     public function format(mixed $value, array $options = []): string
     {
@@ -44,7 +44,7 @@ class DateFormatter implements FormatterContract
     }
 
     /**
-     * 设置默认格式
+     * Set default format
      */
     public function setDefaultFormat(string $format): self
     {

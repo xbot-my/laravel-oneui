@@ -5,37 +5,37 @@ declare(strict_types=1);
 namespace XBot\OneUI\Contracts;
 
 /**
- * 可渲染项接口
+ * Item Renderable Contract
  *
- * 定义列表项（如表格行、菜单项、下拉选项）的通用行为契约。
+ * Defines the common behavior contract for list items (such as table rows, menu items, dropdown options).
  */
 interface ItemRenderable
 {
     /**
-     * 获取指定键的值
+     * Get value by key
      *
-     * @param  string  $key  键名，支持点号分隔的嵌套键
-     * @param  mixed  $default  默认值
+     * @param  string  $key  Key name, supports dot notation for nested keys
+     * @param  mixed  $default  Default value
      */
     public function getValue(string $key, mixed $default = null): mixed;
 
     /**
-     * 检查键是否存在
+     * Check if key exists
      */
     public function hasKey(string $key): bool;
 
     /**
-     * 转换为数组
+     * Convert to array
      */
     public function toArray(): array;
 
     /**
-     * 转换为 JSON 字符串
+     * Convert to JSON string
      */
     public function toJson(int $options = 0): string;
 
     /**
-     * 获取唯一标识符（如 ID）
+     * Get unique identifier (such as ID)
      */
     public function getIdentifier(): mixed;
 }

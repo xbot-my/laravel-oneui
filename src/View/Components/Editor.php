@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Editor 富文本编辑器组件
+ * Editor Rich Text Editor Component
  *
  * Usage:
  * <x-oneui::editor name="content" />
@@ -27,7 +27,7 @@ class Editor extends Component
         $this->id = $id ?? $name;
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.editor');
     }

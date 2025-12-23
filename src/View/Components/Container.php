@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Container 组件
+ * Container Component
  *
  * Usage:
  * <x-oneui::container>Content...</x-oneui::container>
@@ -34,7 +34,7 @@ class Container extends Component
         return 'container';
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.container');
     }

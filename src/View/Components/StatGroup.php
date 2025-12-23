@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * StatGroup 多列统计组件
+ * StatGroup Multi-Column Stats Component
  *
  * Usage:
  * <x-oneui::stat-group :items="[
@@ -24,7 +24,7 @@ class StatGroup extends Component
     ) {
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.stat-group');
     }

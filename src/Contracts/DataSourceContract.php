@@ -7,31 +7,31 @@ namespace XBot\OneUI\Contracts;
 use XBot\OneUI\Support\ItemCollection;
 
 /**
- * 数据源转换接口
+ * Data Source Contract
  *
- * 定义从各种数据源（array、Collection、Eloquent、Paginator）转换为统一格式的契约。
+ * Defines the contract for converting from various data sources (array, Collection, Eloquent, Paginator) to a unified format.
  */
 interface DataSourceContract
 {
     /**
-     * 转换为数组
+     * Convert to array
      */
     public function toArray(): array;
 
     /**
-     * 转换为项目集合
+     * Convert to ItemCollection
      *
-     * @param  array  $config  列/项配置
+     * @param  array  $config  Column/item configuration
      */
     public function toItems(array $config = []): ItemCollection;
 
     /**
-     * 获取项目数量
+     * Get item count
      */
     public function count(): int;
 
     /**
-     * 是否为空
+     * Check if is empty
      */
     public function isEmpty(): bool;
 }

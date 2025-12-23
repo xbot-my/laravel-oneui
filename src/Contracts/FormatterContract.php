@@ -5,23 +5,23 @@ declare(strict_types=1);
 namespace XBot\OneUI\Contracts;
 
 /**
- * 格式化器接口
+ * Formatter Contract
  *
- * 定义值格式化的契约（如日期、货币、Badge 等）。
+ * Defines the contract for value formatting (such as date, currency, Badge, etc.).
  */
 interface FormatterContract
 {
     /**
-     * 格式化值
+     * Format value
      *
-     * @param  mixed  $value  原始值
-     * @param  array  $options  格式化选项
-     * @return string 格式化后的字符串
+     * @param  mixed  $value  Original value
+     * @param  array  $options  Formatting options
+     * @return string Formatted string
      */
     public function format(mixed $value, array $options = []): string;
 
     /**
-     * 获取格式化器名称
+     * Get formatter name
      */
     public function getName(): string;
 }

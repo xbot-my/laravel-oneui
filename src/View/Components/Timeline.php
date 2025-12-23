@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Timeline 时间线组件
+ * Timeline Component
  *
  * Usage:
  * <x-oneui::timeline :items="[
@@ -39,7 +39,7 @@ class Timeline extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.timeline');
     }

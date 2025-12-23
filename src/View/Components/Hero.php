@@ -69,7 +69,7 @@ class Hero extends Component
         return implode(' ', array_filter($classes));
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.hero');
     }

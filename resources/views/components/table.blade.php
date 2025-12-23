@@ -40,8 +40,8 @@
                                     {{-- Currency formatting --}}
                                     {{ $formatCellValue($value, $col) }}
                                 @elseif(!empty($col['html']))
-                                    {{-- Raw HTML --}}
-                                    {!! $value !!}
+                                    {{-- Sanitized HTML --}}
+                                    {!! $sanitizeHtml($value, $col) !!}
                                 @else
                                     {{-- Plain text --}}
                                     {{ $value }}

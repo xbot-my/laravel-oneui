@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Avatar 头像组件
+ * Avatar Component
  *
  * Usage:
  * <x-oneui::avatar src="/path/to/image.jpg" />
@@ -48,7 +48,7 @@ class Avatar extends Component
         };
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.avatar');
     }

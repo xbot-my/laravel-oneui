@@ -62,7 +62,7 @@ class Offcanvas extends Component
         return implode(' ', $attrs);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.offcanvas');
     }

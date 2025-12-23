@@ -64,7 +64,7 @@ class Row extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.row');
     }

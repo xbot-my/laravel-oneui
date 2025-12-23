@@ -32,7 +32,7 @@ class Badge extends Component
         return $base;
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.badge');
     }

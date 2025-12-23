@@ -7,23 +7,23 @@ namespace XBot\OneUI\Support\Formatters;
 use XBot\OneUI\Contracts\FormatterContract;
 
 /**
- * Badge 格式化器
+ * Badge Formatter
  *
- * 将值格式化为 Badge HTML 输出。
+ * Formats values into Badge HTML output.
  */
 class BadgeFormatter implements FormatterContract
 {
     /**
-     * 格式化为 Badge
+     * Format as Badge
      *
-     * @param  mixed  $value  原始值
-     * @param  array  $options  选项（badgeMap、type、pill）
+     * @param  mixed  $value  Original value
+     * @param  array  $options  Options (badgeMap, type, pill)
      */
     public function format(mixed $value, array $options = []): string
     {
         $type = $options['type'] ?? 'primary';
 
-        // 使用 badgeMap 映射值到类型
+        // Use badgeMap to map values to types
         if (!empty($options['badgeMap']) && isset($options['badgeMap'][$value])) {
             $type = $options['badgeMap'][$value];
         }
@@ -38,7 +38,7 @@ class BadgeFormatter implements FormatterContract
     }
 
     /**
-     * 获取 Badge CSS 类
+     * Get Badge CSS classes
      */
     protected function getBadgeClasses(string $type, bool $pill): string
     {

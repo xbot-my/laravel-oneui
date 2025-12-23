@@ -65,7 +65,7 @@ class Col extends Component
             $classes[] = 'offset-md-' . $this->offsetMd;
         }
 
-        // 排序
+        // Order
         if ($this->order) {
             $classes[] = 'order-' . $this->order;
         }
@@ -73,7 +73,7 @@ class Col extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.col');
     }

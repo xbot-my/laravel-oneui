@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * DatePicker 日期选择器组件
+ * DatePicker Component
  *
  * Usage:
  * <x-oneui::datepicker name="date" />
@@ -49,7 +49,7 @@ class DatePicker extends Component
         return json_encode($options);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.datepicker');
     }

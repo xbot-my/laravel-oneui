@@ -75,6 +75,30 @@
                 <x-oneui::button type="primary" tag="a" href="#">Link Button</x-oneui::button>
                 <x-oneui::button type="success" tag="a" href="#" :disabled="true">Disabled Link</x-oneui::button>
             </x-oneui::code-example>
+
+            {{-- Square Buttons --}}
+            @php
+            $squareCode = '<x-oneui::button type="primary" :square="true">Primary</x-oneui::button>
+<x-oneui::button type="success" :square="true">Success</x-oneui::button>
+<x-oneui::button type="danger" :square="true">Danger</x-oneui::button>';
+            @endphp
+            <x-oneui::code-example title="Square Buttons" :code="$squareCode">
+                <x-oneui::button type="primary" :square="true">Primary</x-oneui::button>
+                <x-oneui::button type="success" :square="true">Success</x-oneui::button>
+                <x-oneui::button type="danger" :square="true">Danger</x-oneui::button>
+            </x-oneui::code-example>
+
+            {{-- Pill Buttons --}}
+            @php
+            $pillCode = '<x-oneui::button type="primary" :pill="true">Primary</x-oneui::button>
+<x-oneui::button type="success" :pill="true">Success</x-oneui::button>
+<x-oneui::button type="danger" :pill="true">Danger</x-oneui::button>';
+            @endphp
+            <x-oneui::code-example title="Pill Buttons" :code="$pillCode">
+                <x-oneui::button type="primary" :pill="true">Primary</x-oneui::button>
+                <x-oneui::button type="success" :pill="true">Success</x-oneui::button>
+                <x-oneui::button type="danger" :pill="true">Danger</x-oneui::button>
+            </x-oneui::code-example>
         </div>
     </x-slot>
 

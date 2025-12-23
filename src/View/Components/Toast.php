@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Toast 组件
+ * Toast Component
  *
  * Usage:
  * <x-oneui::toast type="success" title="Success" message="Operation completed!" />
@@ -34,7 +34,7 @@ class Toast extends Component
         };
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.toast');
     }

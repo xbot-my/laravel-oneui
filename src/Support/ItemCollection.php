@@ -10,9 +10,9 @@ use IteratorAggregate;
 use Traversable;
 
 /**
- * 项目集合类
+ * Item Collection
  *
- * 封装多个 DataItem，提供可迭代、可计数的集合操作。
+ * Encapsulates multiple DataItems, providing iterable and countable collection operations.
  */
 class ItemCollection implements IteratorAggregate, Countable
 {
@@ -24,8 +24,8 @@ class ItemCollection implements IteratorAggregate, Countable
     protected string $identifierKey;
 
     /**
-     * @param  array  $items  原始数据数组
-     * @param  string  $identifierKey  标识符键名
+     * @param  array  $items  Raw data array
+     * @param  string  $identifierKey  Identifier key name
      */
     public function __construct(array $items = [], string $identifierKey = 'id')
     {
@@ -34,7 +34,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 设置项目
+     * Set items
      */
     public function setItems(array $items): self
     {
@@ -47,7 +47,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 添加项目
+     * Add item
      */
     public function add(mixed $item): self
     {
@@ -57,7 +57,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 获取所有项目
+     * Get all items
      *
      * @return DataItem[]
      */
@@ -67,7 +67,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 获取第一个项目
+     * Get first item
      */
     public function first(): ?DataItem
     {
@@ -75,7 +75,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 获取最后一个项目
+     * Get last item
      */
     public function last(): ?DataItem
     {
@@ -83,7 +83,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 获取指定索引的项目
+     * Get item by index
      */
     public function get(int $index): ?DataItem
     {
@@ -91,7 +91,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 根据标识符查找项目
+     * Find item by identifier
      */
     public function find(mixed $identifier): ?DataItem
     {
@@ -105,7 +105,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 过滤项目
+     * Filter items
      */
     public function filter(callable $callback): self
     {
@@ -120,7 +120,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 映射项目
+     * Map items
      */
     public function map(callable $callback): array
     {
@@ -128,7 +128,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 提取指定键的值
+     * Pluck values by key
      */
     public function pluck(string $key): array
     {
@@ -136,7 +136,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 转换为数组
+     * Convert to array
      */
     public function toArray(): array
     {
@@ -144,7 +144,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 转换为 JSON 字符串
+     * Convert to JSON string
      */
     public function toJson(int $options = 0): string
     {
@@ -152,7 +152,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 是否为空
+     * Check if is empty
      */
     public function isEmpty(): bool
     {
@@ -160,7 +160,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 是否非空
+     * Check if is not empty
      */
     public function isNotEmpty(): bool
     {
@@ -168,7 +168,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 获取数量
+     * Get count
      */
     public function count(): int
     {
@@ -176,7 +176,7 @@ class ItemCollection implements IteratorAggregate, Countable
     }
 
     /**
-     * 获取迭代器
+     * Get iterator
      */
     public function getIterator(): Traversable
     {

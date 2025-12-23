@@ -21,7 +21,12 @@ class Block extends Component
         public ?string $title = null,
         public bool $rounded = true,
         public bool $bordered = false,
+        public bool $themed = false,
+        public bool $transparent = false,
+        public ?string $headerColor = null, // 'primary', 'success', 'info', 'warning', 'danger', 'dark', 'light'
+        public ?string $headerShade = null, // 'light', 'dark', 'darker'
         public ?string $mode = null, // 'loading', 'hide', 'pinned', 'fullscreen'
+        public ?string $headerClass = null, // Custom header classes
     ) {
     }
 
@@ -37,8 +42,37 @@ class Block extends Component
             $classes[] = 'block-bordered';
         }
 
+        if ($this->themed) {
+            $classes[] = 'block-themed';
+        }
+
+        if ($this->transparent) {
+            $classes[] = 'block-transparent';
+        }
+
         if ($this->mode) {
             $classes[] = 'block-mode-' . $this->mode;
+        }
+
+        return implode(' ', $classes);
+    }
+
+    public function headerClasses(): string
+    {
+        $classes = [];
+
+        if ($this->headerColor) {
+            $color = $this->headerColor;
+            if ($this->headerShade) {
+                $color .= '-' . $this->headerShade;
+            }
+            $classes[] = 'bg-' . $color;
+        } else {
+            $classes[] = 'block-header-default';
+        }
+
+        if ($this->headerClass) {
+            $classes[] = $this->headerClass;
         }
 
         return implode(' ', $classes);

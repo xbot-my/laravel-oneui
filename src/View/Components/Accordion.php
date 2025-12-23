@@ -7,7 +7,7 @@ namespace XBot\OneUI\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Accordion 折叠面板组件
+ * Accordion Component
  *
  * Usage:
  * <x-oneui::accordion id="faq" :items="[
@@ -36,7 +36,7 @@ class Accordion extends Component
         return implode(' ', $classes);
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('oneui::components.accordion');
     }
