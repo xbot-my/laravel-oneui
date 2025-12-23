@@ -87,9 +87,25 @@
             $switchCode = '<x-oneui::checkbox name="switch1" label="Active" :switch="true" :checked="true" />
 <x-oneui::checkbox name="switch2" label="Inactive" :switch="true" />';
             @endphp
-            <x-oneui::code-example title="Switches" :code="$switchCode">
+            <x-oneui::code-example title="Switches (Checkbox with switch option)" :code="$switchCode">
                 <x-oneui::checkbox name="switch1" label="Active" :switch="true" :checked="true" />
                 <x-oneui::checkbox name="switch2" label="Inactive" :switch="true" />
+            </x-oneui::code-example>
+
+            {{-- Switch Component --}}
+            @php
+            $switchCompCode = '<x-oneui::switch name="notifications" label="Notifications" :checked="true" />
+<x-oneui::switch name="dark_mode" label="Dark Mode" description="Enable dark theme" />
+<x-oneui::switch name="status" label="Online Status" type="success" />';
+            @endphp
+            <x-oneui::code-example title="Switch Component" :code="$switchCompCode">
+                <div class="mb-3">
+                    <x-oneui::switch name="notifications" label="Notifications" :checked="true" />
+                </div>
+                <div class="mb-3">
+                    <x-oneui::switch name="dark_mode" label="Dark Mode" description="Enable dark theme" />
+                </div>
+                <x-oneui::switch name="status" label="Online Status" type="success" />
             </x-oneui::code-example>
 
             {{-- Radio --}}

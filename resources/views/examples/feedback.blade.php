@@ -86,6 +86,87 @@ CODE;
                                 <x-oneui::progress :value="100" color="info" :showLabel="true" />
                             </div>
                         </x-oneui::code-example>
+
+                        <h2 class="content-heading">Ribbon</h2>
+
+                        @php
+                            $ribbonCode = <<<'CODE'
+<div class="block block-rounded">
+    <div class="block-content block-content-full ribbon ribbon-primary">
+        <x-oneui::ribbon type="primary">$28</x-oneui::ribbon>
+        <p class="text-center py-4 mb-0">Price with ribbon</p>
+    </div>
+</div>
+
+<div class="block block-rounded">
+    <div class="block-content block-content-full ribbon ribbon-success ribbon-bottom ribbon-left">
+        <x-oneui::ribbon type="success" position="bottom-left">SALE</x-oneui::ribbon>
+        <p class="text-center py-4 mb-0">Sale item</p>
+    </div>
+</div>
+CODE;
+                        @endphp
+                        <x-oneui::code-example title="Ribbons" :code="$ribbonCode">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="block block-rounded">
+                                        <div class="block-content block-content-full ribbon ribbon-primary">
+                                            <x-oneui::ribbon type="primary">$28</x-oneui::ribbon>
+                                            <p class="text-center py-4 mb-0">Price with ribbon</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="block block-rounded">
+                                        <div class="block-content block-content-full ribbon ribbon-success ribbon-bottom ribbon-left">
+                                            <x-oneui::ribbon type="success" position="bottom-left">SALE</x-oneui::ribbon>
+                                            <p class="text-center py-4 mb-0">Sale item</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </x-oneui::code-example>
+
+                        <h2 class="content-heading">Tooltip & Popover</h2>
+
+                        @php
+                            $tooltipPopoverCode = <<<'CODE'
+<x-oneui::tooltip title="Hover for tooltip">
+    <button class="btn btn-primary">Tooltip</button>
+</x-oneui::tooltip>
+
+<x-oneui::tooltip title="Click tooltip" placement="bottom" trigger="click">
+    <button class="btn btn-secondary">Click Tooltip</button>
+</x-oneui::tooltip>
+
+<x-oneui::popover title="Popover Title" content="Popover content goes here">
+    <button class="btn btn-alt-primary">Popover</button>
+</x-oneui::popover>
+
+<x-oneui::popover title="Click Popover" content="More info here" placement="bottom" trigger="click">
+    <button class="btn btn-alt-success">Click Popover</button>
+</x-oneui::popover>
+CODE;
+                        @endphp
+                        <x-oneui::code-example title="Tooltips and Popovers" :code="$tooltipPopoverCode">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <x-oneui::tooltip title="Hover for tooltip">
+                                    <button class="btn btn-primary">Tooltip</button>
+                                </x-oneui::tooltip>
+
+                                <x-oneui::tooltip title="Click tooltip" placement="bottom" trigger="click">
+                                    <button class="btn btn-secondary">Click Tooltip</button>
+                                </x-oneui::tooltip>
+
+                                <x-oneui::popover title="Popover Title" content="Popover content goes here">
+                                    <button class="btn btn-alt-primary">Popover</button>
+                                </x-oneui::popover>
+
+                                <x-oneui::popover title="Click Popover" content="More info here" placement="bottom" trigger="click">
+                                    <button class="btn btn-alt-success">Click Popover</button>
+                                </x-oneui::popover>
+                            </div>
+                        </x-oneui::code-example>
                     </div>
                     </x-slot>
 

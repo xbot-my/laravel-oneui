@@ -43,6 +43,7 @@ return [
         'select2' => \XBot\OneUI\View\Components\Select2::class,
         'checkbox' => \XBot\OneUI\View\Components\Checkbox::class,
         'radio' => \XBot\OneUI\View\Components\Radio::class,
+        'switch' => \XBot\OneUI\View\Components\Switch::class,
         'input-group' => \XBot\OneUI\View\Components\InputGroup::class,
         'file-input' => \XBot\OneUI\View\Components\FileInput::class,
         'floating-label' => \XBot\OneUI\View\Components\FloatingLabel::class,
@@ -71,6 +72,9 @@ return [
         'toast' => \XBot\OneUI\View\Components\Toast::class,
         'progress' => \XBot\OneUI\View\Components\Progress::class,
         'loading' => \XBot\OneUI\View\Components\Loading::class,
+        'ribbon' => \XBot\OneUI\View\Components\Ribbon::class,
+        'tooltip' => \XBot\OneUI\View\Components\Tooltip::class,
+        'popover' => \XBot\OneUI\View\Components\Popover::class,
 
         // Overlay Components
         'modal' => \XBot\OneUI\View\Components\Modal::class,
