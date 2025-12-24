@@ -125,6 +125,7 @@ return [
         'video-background' => \XBot\OneUI\View\Components\VideoBackground::class,
         'data-list' => \XBot\OneUI\View\Components\DataList::class,
         'steps' => \XBot\OneUI\View\Components\Steps::class,
+        'tiles' => \XBot\OneUI\View\Components\Tiles::class,
         'countdown' => \XBot\OneUI\View\Components\Countdown::class,
         'easy-pie-chart' => \XBot\OneUI\View\Components\EasyPieChart::class,
         'sortable' => \XBot\OneUI\View\Components\Sortable::class,
