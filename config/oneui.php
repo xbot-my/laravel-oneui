@@ -65,6 +65,9 @@ return [
         'tabs' => \XBot\OneUI\View\Components\Tabs::class,
         'nav-item' => \XBot\OneUI\View\Components\NavItem::class,
         'sidebar-menu' => \XBot\OneUI\View\Components\SidebarMenu::class,
+        'mega-menu' => \XBot\OneUI\View\Components\MegaMenu::class,
+        'horizontal-nav' => \XBot\OneUI\View\Components\HorizontalNav::class,
+        'horizontal-nav-item' => \XBot\OneUI\View\Components\HorizontalNavItem::class,
 
         // Feedback Components
         'alert' => \XBot\OneUI\View\Components\Alert::class,

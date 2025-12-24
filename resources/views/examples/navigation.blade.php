@@ -74,6 +74,84 @@ CODE;
                     ]" />
                 </div>
             </x-oneui::code-example>
+
+            <h2 class="content-heading">Mega Menu</h2>
+
+            @php
+            $megaMenuCode = <<<'CODE'
+<x-oneui::mega-menu id="mega-projects" title="My Projects" size="xl" header-color="primary">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <div class="p-4">
+                <h5 class="mb-3">Recent</h5>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <span>Project Alpha</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <span>Project Beta</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4">
+                <h5 class="mb-3">Archived</h5>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <span>Old Project 1</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</x-oneui::mega-menu>
+CODE;
+            @endphp
+            <x-oneui::code-example title="Mega Menu" :code="$megaMenuCode">
+                <x-oneui::mega-menu id="mega-projects" title="My Projects" size="xl" header-color="primary">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="p-4">
+                                <h5 class="mb-3">Recent</h5>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <span>Project Alpha</span>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <span>Project Beta</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4">
+                                <h5 class="mb-3">Archived</h5>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <span>Old Project 1</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </x-oneui::mega-menu>
+            </x-oneui::code-example>
+
+            <h2 class="content-heading">Horizontal Navigation</h2>
+
+            @php
+            $horizNavCode = <<<'CODE'
+<x-oneui::horizontal-nav mode="hover">
+    <x-oneui::horizontal-nav-item href="#" icon="fa-home" :active="true">Home</x-oneui::horizontal-nav-item>
+    <x-oneui::horizontal-nav-item heading="Manage"></x-oneui::horizontal-nav-item>
+    <x-oneui::horizontal-nav-item href="#" icon="fa-briefcase" :submenu="true">Products</x-oneui::horizontal-nav-item>
+    <x-oneui::horizontal-nav-item href="#" icon="fa-envelope">Contact</x-oneui::horizontal-nav-item>
+</x-oneui::horizontal-nav>
+CODE;
+            @endphp
+            <x-oneui::code-example title="Horizontal Navigation" :code="$horizNavCode">
+                <div class="bg-body-extra-light p-3">
+                    <x-oneui::horizontal-nav mode="hover">
+                        <x-oneui::horizontal-nav-item href="#" icon="fa-home" :active="true">Home</x-oneui::horizontal-nav-item>
+                        <x-oneui::horizontal-nav-item heading="Manage"></x-oneui::horizontal-nav-item>
+                        <x-oneui::horizontal-nav-item href="#" icon="fa-briefcase" :submenu="true">Products</x-oneui::horizontal-nav-item>
+                        <x-oneui::horizontal-nav-item href="#" icon="fa-envelope">Contact</x-oneui::horizontal-nav-item>
+                    </x-oneui::horizontal-nav>
+                </div>
+            </x-oneui::code-example>
         </div>
     </x-slot>
 
