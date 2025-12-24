@@ -129,5 +129,8 @@ return [
         'countdown' => \XBot\OneUI\View\Components\Countdown::class,
         'easy-pie-chart' => \XBot\OneUI\View\Components\EasyPieChart::class,
         'sortable' => \XBot\OneUI\View\Components\Sortable::class,
+        'image' => \XBot\OneUI\View\Components\Image::class,
+        'user-card' => \XBot\OneUI\View\Components\UserCard::class,
+        'post-card' => \XBot\OneUI\View\Components\PostCard::class,
     ],
 ];
