@@ -35,6 +35,9 @@ return [
         'row' => \XBot\OneUI\View\Components\Row::class,
         'col' => \XBot\OneUI\View\Components\Col::class,
         'offcanvas' => \XBot\OneUI\View\Components\Offcanvas::class,
+        'sidebar' => \XBot\OneUI\View\Components\Sidebar::class,
+        'header' => \XBot\OneUI\View\Components\Header::class,
+        'side-overlay' => \XBot\OneUI\View\Components\SideOverlay::class,
 
         // Form Components
         'button' => \XBot\OneUI\View\Components\Button::class,
@@ -50,6 +53,18 @@ return [
         'form' => \XBot\OneUI\View\Components\Form::class,
         'datepicker' => \XBot\OneUI\View\Components\DatePicker::class,
         'editor' => \XBot\OneUI\View\Components\Editor::class,
+        'range' => \XBot\OneUI\View\Components\Range::class,
+        'rating' => \XBot\OneUI\View\Components\Rating::class,
+        'validation' => \XBot\OneUI\View\Components\Validation::class,
+        'input-mask' => \XBot\OneUI\View\Components\InputMask::class,
+        'max-length' => \XBot\OneUI\View\Components\MaxLength::class,
+        'dropzone' => \XBot\OneUI\View\Components\Dropzone::class,
+        'c-k-editor5' => \XBot\OneUI\View\Components\CKEditor5::class,
+        'c-k-editor5-inline' => \XBot\OneUI\View\Components\CKEditor5Inline::class,
+        'simple-mde' => \XBot\OneUI\View\Components\SimpleMDE::class,
+        'tags-input' => \XBot\OneUI\View\Components\TagsInput::class,
+        'color-picker' => \XBot\OneUI\View\Components\ColorPicker::class,
+        'dual-list-box' => \XBot\OneUI\View\Components\DualListBox::class,
 
         // Data Display Components
         'table' => \XBot\OneUI\View\Components\Table::class,
@@ -58,6 +73,13 @@ return [
         'pagination' => \XBot\OneUI\View\Components\Pagination::class,
         'stat-widget' => \XBot\OneUI\View\Components\StatWidget::class,
         'stat-group' => \XBot\OneUI\View\Components\StatGroup::class,
+        'chart-js' => \XBot\OneUI\View\Components\ChartJS::class,
+        'datatables' => \XBot\OneUI\View\Components\DataTables::class,
+        'full-calendar' => \XBot\OneUI\View\Components\FullCalendar::class,
+        'image-cropper' => \XBot\OneUI\View\Components\ImageCropper::class,
+        'carousel' => \XBot\OneUI\View\Components\Carousel::class,
+        'tree' => \XBot\OneUI\View\Components\Tree::class,
+        'sparkline' => \XBot\OneUI\View\Components\Sparkline::class,
 
         // Navigation Components
         'breadcrumb' => \XBot\OneUI\View\Components\Breadcrumb::class,
@@ -78,10 +100,13 @@ return [
         'ribbon' => \XBot\OneUI\View\Components\Ribbon::class,
         'tooltip' => \XBot\OneUI\View\Components\Tooltip::class,
         'popover' => \XBot\OneUI\View\Components\Popover::class,
+        'sweet-alert2' => \XBot\OneUI\View\Components\SweetAlert2::class,
+        'bootstrap-notify' => \XBot\OneUI\View\Components\BootstrapNotify::class,
 
         // Overlay Components
         'modal' => \XBot\OneUI\View\Components\Modal::class,
         'dropdown' => \XBot\OneUI\View\Components\Dropdown::class,
+        'magnific-popup' => \XBot\OneUI\View\Components\MagnificPopup::class,
 
         // Interactive Components
         'accordion' => \XBot\OneUI\View\Components\Accordion::class,
@@ -91,5 +116,17 @@ return [
         // Utility Components
         'avatar' => \XBot\OneUI\View\Components\Avatar::class,
         'code-example' => \XBot\OneUI\View\Components\CodeExample::class,
+        'vector-map' => \XBot\OneUI\View\Components\VectorMap::class,
+        'syntax-highlight' => \XBot\OneUI\View\Components\SyntaxHighlight::class,
+        'icons' => \XBot\OneUI\View\Components\Icons::class,
+        'animations' => \XBot\OneUI\View\Components\Animations::class,
+        'appear' => \XBot\OneUI\View\Components\Appear::class,
+        'simple-bar' => \XBot\OneUI\View\Components\SimpleBar::class,
+        'video-background' => \XBot\OneUI\View\Components\VideoBackground::class,
+        'data-list' => \XBot\OneUI\View\Components\DataList::class,
+        'steps' => \XBot\OneUI\View\Components\Steps::class,
+        'countdown' => \XBot\OneUI\View\Components\Countdown::class,
+        'easy-pie-chart' => \XBot\OneUI\View\Components\EasyPieChart::class,
+        'sortable' => \XBot\OneUI\View\Components\Sortable::class,
     ],
 ];

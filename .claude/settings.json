@@ -1,0 +1,9 @@
+{
+  "enabledPlugins": {
+    "claude-mem@thedotmack": false,
+    "commit-commands@claude-code-plugins": true,
+    "playwright@claude-plugins-official": true,
+    "php-lsp@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true
+  }
+}

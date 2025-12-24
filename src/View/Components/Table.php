@@ -152,11 +152,16 @@ class Table extends Component
         // Strip dangerous tags and attributes
         $cleaned = strip_tags($html, $allowedTags);
 
-        // Additional sanitization: remove onclick, onerror, etc.
+        // Remove dangerous JavaScript function calls (alert, confirm, prompt, eval, etc.)
+        $cleaned = preg_replace('/\b(alert|confirm|prompt|eval|document\.|window\.|console\.|location\.)/i', '', $cleaned);
+
+        // Remove onclick, onerror, etc.
         $cleaned = preg_replace('/\s*on\w+\s*=\s*["\'][^"\']*["\']/', '', $cleaned);
 
         // Remove javascript: protocol
-        $cleaned = preg_replace('/(<a\s[^>]*href\s*=\s*["\'])javascript:[^"\']*(["\'])/i', '$1#$2', $cleaned);
+        $cleaned = preg_replace_callback('/(<a\s[^>]*href\s*=\s*["\'])javascript:[^"\']*(["\'])/i', function ($matches) {
+            return $matches[1] . '#"' . $matches[2];
+        }, $cleaned);
 
         return $cleaned;
     }

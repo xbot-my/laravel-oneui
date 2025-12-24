@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/workbench/database/seeders" isTestSource="true" packagePrefix="Workbench\Database\Seeders\" />
       <excludeFolder url="file://$MODULE_DIR$/oneui-5.12-html/src/assets/_scss/bootstrap/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/oneui-5.12-html/src/assets/_scss/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/Browser/Screenshots" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/Browser/Traces" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />

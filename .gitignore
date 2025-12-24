@@ -11,3 +11,7 @@ composer.lock
 package-lock.json
 vendor/
 blade-ui-kit/
+tests/Browser/Screenshots/
+tests/Browser/Traces/
+.playwright/
+playwright-report/
