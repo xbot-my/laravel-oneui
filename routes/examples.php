@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn() => view('oneui::examples.index'))->name('index');
 Route::get('/layout', fn() => view('oneui::examples.layout'))->name('layout');
 Route::get('/forms', fn() => view('oneui::examples.forms'))->name('forms');
-Route::get('/buttons', fn() => view('oneui::examples.buttons'))->name('buttons');
+Route::get('/forms-advanced', fn() => view('oneui::examples.forms-advanced'))->name('forms-advanced');
 Route::get('/tables', fn() => view('oneui::examples.tables'))->name('tables');
 Route::get('/charts', fn() => view('oneui::examples.charts'))->name('charts');
 Route::get('/metrics', fn() => view('oneui::examples.metrics'))->name('metrics');

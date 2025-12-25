@@ -1,7 +1,7 @@
 <x-oneui::page>
 	<x-slot:title>OneUI Components</x-slot:title>
 	<x-slot:sidebar>
-		@include('oneui::partials.sidebar')
+		@include('oneui::examples._sidebar')
 	</x-slot:sidebar>
 
 	<x-slot:content>
@@ -22,9 +22,10 @@
 				<div class="col-md-6 col-lg-4">
 					<x-oneui::block>
 						<h3 class="fs-4 mb-3">Forms</h3>
-						<p class="text-muted small mb-3">Input, Select, Button, DatePicker...</p>
+						<p class="text-muted small mb-3">Input, Button, Checkbox, Select...</p>
 						<ul class="nav nav-sm nav-pills flex-column">
-							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.forms') }}">All Form Components</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.forms') }}">Basic Form Components</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.forms-advanced') }}">Advanced Form Components</a></li>
 						</ul>
 					</x-oneui::block>
 				</div>
@@ -101,10 +102,21 @@
 
 				<div class="col-md-6 col-lg-4">
 					<x-oneui::block>
-						<h3 class="fs-4 mb-3">Notifications</h3>
-						<p class="text-muted small mb-3">Alerts, toasts, and feedback</p>
+						<h3 class="fs-4 mb-3">Modals</h3>
+						<p class="text-muted small mb-3">Modal dialogs and overlays</p>
 						<ul class="nav nav-sm nav-pills flex-column">
-							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.notifications') }}">Alert, Modal, Toast, SweetAlert2...</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.modals') }}">Modal, Dropdown, Offcanvas</a></li>
+						</ul>
+					</x-oneui::block>
+				</div>
+
+				<div class="col-md-6 col-lg-4">
+					<x-oneui::block>
+						<h3 class="fs-4 mb-3">Alerts & Feedback</h3>
+						<p class="text-muted small mb-3">Alerts, toasts, and spinners</p>
+						<ul class="nav nav-sm nav-pills flex-column">
+							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.alerts') }}">Alert, Toast, Spinner, Progress...</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.notifications') }}">SweetAlert2, BootstrapNotify</a></li>
 						</ul>
 					</x-oneui::block>
 				</div>
