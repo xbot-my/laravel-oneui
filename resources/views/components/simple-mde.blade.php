@@ -1,10 +1,14 @@
+@php
+    $theme = $editorTheme ?? 'easymde';
+    $minHeight = $editorMinHeight ?? '300px';
+@endphp
 @if($label)
     <label class="form-label" for="{{ $id ?? $name }}">{{ $label }}</label>
 @endif
 
 <textarea name="{{ $name }}" id="{{ $id ?? $name }}" {{ $attributes->except(['name', 'id']) }} class="simplemde-textarea">{{ $value ?? '' }}</textarea>
 
-@if(!$editorTheme || $editorTheme === 'easymde')
+@if(!$theme || $theme === 'easymde')
     <link rel="stylesheet" href="{{ asset('vendor/oneui/js/plugins/simplemde/css/simplemde.min.css') }}">
 @endif
 
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .CodeMirror {
-    min-height: {{ $editorMinHeight }};
+    min-height: {{ $minHeight }};
     border-radius: 0.375rem;
 }
 

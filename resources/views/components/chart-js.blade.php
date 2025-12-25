@@ -1,4 +1,8 @@
-<div class="chart-js-container {{ $attributes->get('class') }}" style="height: {{ $chartHeight }}px;">
+@php
+    $height = $chartHeight ?? 300;
+    $labels = $chartLabels ?? [];
+@endphp
+<div class="chart-js-container {{ $attributes->get('class') }}" style="height: {{ $height }}px;">
     <canvas id="{{ $id }}"></canvas>
 </div>
 
