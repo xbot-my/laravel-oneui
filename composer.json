@@ -76,6 +76,17 @@
             "@php -r \"file_exists('bootstrap/cache/config.php') && @unlink('bootstrap/cache/config.php');\"",
             "echo 'Done - Please refresh browser'"
         ],
+        "publish": [
+            "@php artisan vendor:publish --provider='XBot\\\\OneUI\\\\OneUIServiceProvider' --tag=oneui-config --ansi",
+            "@php artisan vendor:publish --provider='XBot\\\\OneUI\\\\OneUIServiceProvider' --tag=oneui-views --ansi",
+            "@php artisan vendor:publish --provider='XBot\\\\OneUI\\\\OneUIServiceProvider' --tag=oneui-assets --ansi",
+            "@php artisan vendor:publish --provider='XBot\\\\OneUI\\\\OneUIServiceProvider' --tag=oneui-examples --ansi",
+            "echo 'All OneUI resources published successfully'"
+        ],
+        "publish-examples": [
+            "@php artisan vendor:publish --provider='XBot\\\\OneUI\\\\OneUIServiceProvider' --tag=oneui-examples --force --ansi",
+            "echo 'Example routes published'"
+        ],
         "serve": [
             "Composer\\Config::disableProcessTimeout",
             "@build",
