@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use XBot\OneUI\Http\Controllers\Examples;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,21 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn() => view('oneui::examples.index'))->name('index');
-Route::get('/layout', fn() => view('oneui::examples.layout'))->name('layout');
-Route::get('/forms', fn() => view('oneui::examples.forms'))->name('forms');
-Route::get('/forms-advanced', fn() => view('oneui::examples.forms-advanced'))->name('forms-advanced');
-Route::get('/tables', fn() => view('oneui::examples.tables'))->name('tables');
-Route::get('/charts', fn() => view('oneui::examples.charts'))->name('charts');
-Route::get('/metrics', fn() => view('oneui::examples.metrics'))->name('metrics');
-Route::get('/lists', fn() => view('oneui::examples.lists'))->name('lists');
-Route::get('/cards', fn() => view('oneui::examples.cards'))->name('cards');
-Route::get('/calendar', fn() => view('oneui::examples.calendar'))->name('calendar');
-Route::get('/editors', fn() => view('oneui::examples.editors'))->name('editors');
-Route::get('/upload', fn() => view('oneui::examples.upload'))->name('upload');
-Route::get('/navigation', fn() => view('oneui::examples.navigation'))->name('navigation');
-Route::get('/notifications', fn() => view('oneui::examples.notifications'))->name('notifications');
-Route::get('/media', fn() => view('oneui::examples.media'))->name('media');
-Route::get('/utilities', fn() => view('oneui::examples.utilities'))->name('utilities');
-Route::get('/alerts', fn() => view('oneui::examples.alerts'))->name('alerts');
-Route::get('/modals', fn() => view('oneui::examples.modals'))->name('modals');
+Route::get('/', Examples\IndexController::class)->name('index');
+Route::get('/layout', Examples\LayoutController::class)->name('layout');
+Route::get('/forms', Examples\FormController::class)->name('forms');
+Route::get('/forms-advanced', Examples\FormAdvancedController::class)->name('forms-advanced');
+Route::get('/tables', Examples\TableController::class)->name('tables');
+Route::get('/charts', Examples\ChartController::class)->name('charts');
+Route::get('/metrics', Examples\MetricController::class)->name('metrics');
+Route::get('/lists', Examples\ListController::class)->name('lists');
+Route::get('/cards', Examples\CardController::class)->name('cards');
+Route::get('/calendar', Examples\CalendarController::class)->name('calendar');
+Route::get('/editors', Examples\EditorController::class)->name('editors');
+Route::get('/upload', Examples\UploadController::class)->name('upload');
+Route::get('/navigation', Examples\NavigationController::class)->name('navigation');
+Route::get('/notifications', Examples\NotificationController::class)->name('notifications');
+Route::get('/media', Examples\MediaController::class)->name('media');
+Route::get('/utilities', Examples\UtilityController::class)->name('utilities');
+Route::get('/alerts', Examples\AlertController::class)->name('alerts');
+Route::get('/modals', Examples\ModalController::class)->name('modals');
