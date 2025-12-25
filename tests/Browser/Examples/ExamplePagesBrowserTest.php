@@ -2,12 +2,6 @@
 
 declare(strict_types=1);
 
-namespace XBot\OneUI\Tests\Browser\Examples;
-
-use XBot\OneUI\Tests\Browser\BaseBrowserTest;
-
-uses(BaseBrowserTest::class);
-
 // ==================== Group 1: Basic Layout ====================
 
 test('index page loads without errors', function () {

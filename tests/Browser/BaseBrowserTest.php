@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace XBot\OneUI\Tests\Browser;
 
-use Tests\TestCase;
+use XBot\OneUI\Tests\TestCase;
 
 abstract class BaseBrowserTest extends TestCase
 {
@@ -40,16 +40,6 @@ abstract class BaseBrowserTest extends TestCase
     }
 
     /**
-     * Visit a URL for testing.
-     */
-    protected function visit(string $url): \Pest\Browser\Page
-    {
-        $this->page = browser()->visit($url);
-
-        return $this->page;
-    }
-
-    /**
      * Assert that a page loads successfully by route name.
      */
     protected function assertPageLoadsSuccessfully(string $routeName): void
@@ -58,7 +48,7 @@ abstract class BaseBrowserTest extends TestCase
 
         echo "\n[INFO] Visiting: {$url}";
 
-        browser()->visit($url)
+        $this->page = browser()->visit($url)
             ->assertStatus(200)
             ->assertNoSmoke();
 
