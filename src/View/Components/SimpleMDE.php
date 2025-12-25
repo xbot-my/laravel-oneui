@@ -143,4 +143,20 @@ class SimpleMDE extends Component
     {
         return view('oneui::components.simple-mde');
     }
+
+    /**
+     * Get theme value for blade template
+     */
+    public function getTheme(): string
+    {
+        return $this->theme;
+    }
+
+    /**
+     * Get minHeight value for blade template
+     */
+    public function getMinHeight(): string
+    {
+        return $this->minHeight;
+    }
 }

@@ -1,4 +1,4 @@
-<div class="chart-js-container {{ $attributes->get('class') }}" style="height: {{ $height }}px;">
+<div class="chart-js-container {{ $attributes->get('class') }}" style="height: {{ $getHeight() }}px;">
     <canvas id="{{ $id }}"></canvas>
 </div>
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         new Chart(ctx, {
             type: '{{ $type }}',
             data: {
-                labels: {{ \Illuminate\Support\Js::from($labels) }},
+                labels: {{ \Illuminate\Support\Js::from($getLabels()) }},
                 datasets: datasets
             },
             options: {!! $optionsJson() !!}

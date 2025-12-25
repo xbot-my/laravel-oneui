@@ -123,4 +123,20 @@ class ChartJS extends Component
     {
         return view('oneui::components.chart-js');
     }
+
+    /**
+     * Get height value for blade template
+     */
+    public function getHeight(): int
+    {
+        return $this->height;
+    }
+
+    /**
+     * Get labels for blade template
+     */
+    public function getLabels(): array
+    {
+        return $this->labels;
+    }
 }
