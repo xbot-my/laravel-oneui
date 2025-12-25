@@ -122,8 +122,8 @@ class ChartJS extends Component
     public function render(): View
     {
         return view('oneui::components.chart-js')
-            ->with('height', $this->height)
-            ->with('labels', $this->labels);
+            ->with('chartHeight', $this->height)
+            ->with('chartLabels', $this->labels);
     }
 
     /**

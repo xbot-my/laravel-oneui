@@ -4,7 +4,7 @@
 
 <textarea name="{{ $name }}" id="{{ $id ?? $name }}" {{ $attributes->except(['name', 'id']) }} class="simplemde-textarea">{{ $value ?? '' }}</textarea>
 
-@if(!$theme || $theme === 'easymde')
+@if(!$editorTheme || $editorTheme === 'easymde')
     <link rel="stylesheet" href="{{ asset('vendor/oneui/js/plugins/simplemde/css/simplemde.min.css') }}">
 @endif
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .CodeMirror {
-    min-height: {{ $minHeight }};
+    min-height: {{ $editorMinHeight }};
     border-radius: 0.375rem;
 }
 
