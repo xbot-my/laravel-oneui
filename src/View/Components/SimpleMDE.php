@@ -48,6 +48,14 @@ class SimpleMDE extends Component
     }
 
     /**
+     * Get the element ID for blade template
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
      * Get default toolbar configuration
      */
     public function getToolbar(): string
