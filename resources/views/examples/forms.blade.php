@@ -92,20 +92,20 @@
 				<x-oneui::checkbox name="switch2" label="Inactive" :switch="true"/>
 			</x-oneui::code-example>
 
-			{{-- Switch Component --}}
+			{{-- Toggle Switch Component --}}
 			@php
-				$switchCompCode = '<x-oneui::switch name="notifications" label="Notifications" :checked="true" />
-	<x-oneui::switch name="dark_mode" label="Dark Mode" description="Enable dark theme" />
-	<x-oneui::switch name="status" label="Online Status" type="success" />';
+				$toggleSwitchCompCode = '<x-oneui::toggle-switch name="notifications" label="Notifications" :checked="true" />
+	<x-oneui::toggle-switch name="dark_mode" label="Dark Mode" description="Enable dark theme" />
+	<x-oneui::toggle-switch name="status" label="Online Status" color="success" />';
 			@endphp
-			<x-oneui::code-example title="Switch Component" :code="$switchCompCode">
+			<x-oneui::code-example title="Toggle Switch Component" :code="$toggleSwitchCompCode">
 				<div class="mb-3">
-					<x-oneui::switch name="notifications" label="Notifications" :checked="true"/>
+					<x-oneui::toggle-switch name="notifications" label="Notifications" :checked="true"/>
 				</div>
 				<div class="mb-3">
-					<x-oneui::switch name="dark_mode" label="Dark Mode" description="Enable dark theme"/>
+					<x-oneui::toggle-switch name="dark_mode" label="Dark Mode" description="Enable dark theme"/>
 				</div>
-				<x-oneui::switch name="status" label="Online Status" type="success"/>
+				<x-oneui::toggle-switch name="status" label="Online Status" color="success"/>
 			</x-oneui::code-example>
 
 			{{-- Radio --}}

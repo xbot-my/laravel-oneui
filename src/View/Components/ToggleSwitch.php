@@ -8,14 +8,14 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 /**
- * Switch Component - Toggle switch input
+ * ToggleSwitch Component - Toggle switch input
  *
  * Usage:
- * <x-oneui::switch name="active" label="Active Status" />
- * <x-oneui::switch name="notifications" label="Enable Notifications" :checked="true" />
- * <x-oneui::switch name="mode" label="Dark Mode" description="Enable dark theme" />
+ * <x-oneui::toggle-switch name="active" label="Active Status" />
+ * <x-oneui::toggle-switch name="notifications" label="Enable Notifications" :checked="true" />
+ * <x-oneui::toggle-switch name="mode" label="Dark Mode" description="Enable dark theme" />
  */
-class Switch extends Component
+class ToggleSwitch extends Component
 {
     public function __construct(
         public string $name,
@@ -57,6 +57,6 @@ class Switch extends Component
 
     public function render(): View
     {
-        return view('oneui::components.switch');
+        return view('oneui::components.toggle-switch');
     }
 }
