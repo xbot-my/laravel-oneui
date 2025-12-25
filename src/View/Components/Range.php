@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare( strict_types = 1 );
 
 namespace XBot\OneUI\View\Components;
 
@@ -18,58 +18,62 @@ use Illuminate\View\Component;
 class Range extends Component
 {
     public function __construct(
-        public string $name,
-        public string $id = null,
-        public float|int $min = 0,
-        public float|int|string $max = 100,
-        public float|int $from = 0,
-        public ?float|int $to = null,
-        public string $type = 'single', // single, double
-        public string $prefix = '',
-        public string $postfix = '',
-        public bool $grid = false,
-        public int $gridNum = 10,
-        public bool $disable = false,
-        public string $skin = 'round', // round, flat, big
-        public array $extraOptions = [], // Additional ion-rangeslider options
-    ) {
+        public string               $name,
+        public ?string              $id = null,
+        public float | int          $min = 0,
+        public float | int | string $max = 100,
+        public float | int          $from = 0,
+        public null | float | int   $to = null,
+        public string               $type = 'single', // single, double
+        public string               $prefix = '',
+        public string               $postfix = '',
+        public bool                 $grid = false,
+        public int                  $gridNum = 10,
+        public bool                 $disable = false,
+        public string               $skin = 'round', // round, flat, big
+        public array                $extraOptions = [], // Additional ion-rangeslider options
+    )
+    {
         $this->id = $id ?? $this->name;
         $this->to ??= $from;
     }
-
+    
     public function dataOptions(): string
     {
         $options = array_merge($this->extraOptions, [
-            'type' => $this->type,
-            'min' => $this->min,
-            'max' => $this->max,
-            'from' => $this->from,
-            'to' => $this->to,
-            'prefix' => $this->prefix,
-            'postfix' => $this->postfix,
-            'grid' => $this->grid,
+            'type'     => $this->type,
+            'min'      => $this->min,
+            'max'      => $this->max,
+            'from'     => $this->from,
+            'to'       => $this->to,
+            'prefix'   => $this->prefix,
+            'postfix'  => $this->postfix,
+            'grid'     => $this->grid,
             'grid_num' => $this->gridNum,
-            'skin' => $this->skin,
-            'disable' => $this->disable,
+            'skin'     => $this->skin,
+            'disable'  => $this->disable,
         ]);
-
+        
         // Convert to JavaScript object
         $pairs = [];
         foreach ($options as $key => $value) {
             if (is_bool($value)) {
                 $pairs[] = sprintf('%s:%s', $key, $value ? 'true' : 'false');
-            } elseif (is_numeric($value)) {
+            }
+            elseif (is_numeric($value)) {
                 $pairs[] = sprintf('%s:%s', $key, $value);
-            } elseif (is_string($value)) {
+            }
+            elseif (is_string($value)) {
                 $pairs[] = sprintf('%s:"%s"', $key, addslashes($value));
-            } elseif (is_array($value)) {
+            }
+            elseif (is_array($value)) {
                 $pairs[] = sprintf('%s:%s', $key, json_encode($value));
             }
         }
-
+        
         return '{' . implode(',', $pairs) . '}';
     }
-
+    
     public function render(): View
     {
         return view('oneui::components.range');

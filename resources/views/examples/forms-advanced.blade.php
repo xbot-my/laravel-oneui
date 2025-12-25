@@ -145,10 +145,10 @@ $heading = '<h2 class="content-heading">Advanced Form Components</h2>';
     {{-- Validation --}}
     @php
         $validationCode = <<<'CODE'
-	<x-oneui::validation :errors="['name' => 'Name is required', 'email' => 'Email must be valid']" />
+	<x-oneui::validation :messages="['name' => 'Name is required', 'email' => 'Email must be valid']" />
 	CODE;
     @endphp
     <x-oneui::code-example title="Validation Messages" :code="$validationCode">
-        <x-oneui::validation :errors="['name' => 'Name is required', 'email' => 'Email must be valid', 'password' => 'Password must be at least 8 characters']" />
+        <x-oneui::validation :messages="['name' => 'Name is required', 'email' => 'Email must be valid', 'password' => 'Password must be at least 8 characters']" />
     </x-oneui::code-example>
 @endsection
