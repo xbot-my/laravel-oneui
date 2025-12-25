@@ -141,7 +141,9 @@ class SimpleMDE extends Component
 
     public function render(): View
     {
-        return view('oneui::components.simple-mde');
+        return view('oneui::components.simple-mde')
+            ->with('theme', $this->theme)
+            ->with('minHeight', $this->minHeight);
     }
 
     /**
