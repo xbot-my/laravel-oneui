@@ -18,7 +18,7 @@ use Carbon\Carbon;
 class Countdown extends Component
 {
     public function __construct(
-        public string $id = 'countdown-' . uniqid(),
+        public string $id = '',
         public ?string $until = null, // Date string or Carbon instance
         public ?int $seconds = null,
         public string $format = 'dHMS', // d, H, M, S combinations
@@ -28,6 +28,10 @@ class Countdown extends Component
         public ?string $onTick = null, // JavaScript callback
         public array $options = [],
     ) {
+        // Generate unique ID if not provided
+        if ($this->id === '') {
+            $this->id = 'countdown-' . uniqid();
+        }
         // Convert until to timestamp
         if ($this->until) {
             if (is_string($this->until)) {

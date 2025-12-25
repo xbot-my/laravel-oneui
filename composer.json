@@ -99,6 +99,10 @@
         "test": [
             "@clear",
             "@php vendor/bin/pest"
+        ],
+        "test:browser": [
+            "@build",
+            "./vendor/bin/pest --testsuite=Browser"
         ]
     }
 }

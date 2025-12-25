@@ -1,0 +1,66 @@
+name: Browser Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  browser-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['8.3']
+        laravel-version: ['11.x', '12.x']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: dom, curl, mbstring, zip, pcntl
+          coverage: none
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction --no-progress
+
+      - name: Build testbench skeleton
+        run: composer run build
+
+      - name: Install Playwright browsers
+        run: |
+          npx playwright install chromium
+          npx playwright install-deps chromium
+
+      - name: Start test server
+        run: |
+          php vendor/bin/testbench serve --ansi &
+          sleep 8
+          curl --retry 10 --retry-delay 2 -v http://127.0.0.1:8000
+
+      - name: Run browser tests
+        run: ./vendor/bin/pest --testsuite=Browser
+        env:
+          APP_ENV: testing
+
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-screenshots-php-${{ matrix.php-version }}-laravel-${{ matrix.laravel-version }}
+          path: tests/Browser/Screenshots/
+          retention-days: 7
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs-php-${{ matrix.php-version }}-laravel-${{ matrix.laravel-version }}
+          path: |
+            storage/logs/
+            tests/Browser/Screenshots/

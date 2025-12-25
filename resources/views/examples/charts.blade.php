@@ -36,23 +36,24 @@
 
 			{{-- Sparkline --}}
 			@php
-				$sparklineCode = '<x-oneui::sparkline id="spark1" type="line" :values="[10, 20, 15, 25, 20, 30]" />';
+				$sparklineCode = '<x-oneui::sparkline id="spark1" type="line" :data="[10, 20, 15, 25, 20, 30]" />';
 			@endphp
 			<x-oneui::code-example title="Sparkline" :code="$sparklineCode">
 				<div>
 					<span class="me-3">Sales:</span>
-					<x-oneui::sparkline id="spark1" type="line" :values="[10, 20, 15, 25, 20, 30]" width="100" height="30"/>
+					<x-oneui::sparkline id="spark1" type="line" :data="[10, 20, 15, 25, 20, 30]" :width="100" :height="30"/>
 				</div>
 				<div class="mt-2">
 					<span class="me-3">Views:</span>
-					<x-oneui::sparkline id="spark2" type="bar" :values="[5, 15, 10, 20, 15, 25]" width="100" height="30"/>
+					<x-oneui::sparkline id="spark2" type="bar" :data="[5, 15, 10, 20, 15, 25]" :width="100" :height="30"/>
 				</div>
 			</x-oneui::code-example>
 
 			{{-- EasyPieChart --}}
 			@php
-				$pieCode = '<x-oneui::easy-pie-chart id="pie1" :percent="75" label="Complete" />
-	<x-oneui::easy-pie-chart id="pie2" :percent="45" color="#eab308" label="Pending" />';
+				$pieCode = '<x-oneui::easy-pie-chart id="pie1" :percent="75" />
+	<x-oneui::easy-pie-chart id="pie2" :percent="45" bar-color="#eab308" />
+	<x-oneui::easy-pie-chart id="pie3" :percent="90" bar-color="#ef4444" />';
 			@endphp
 			<x-oneui::code-example title="EasyPieChart" :code="$pieCode">
 				<div class="row text-center">
@@ -61,11 +62,11 @@
 						<div class="small text-muted mt-2">Complete</div>
 					</div>
 					<div class="col-4">
-						<x-oneui::easy-pie-chart id="pie2" :percent="45" color="#eab308"/>
+						<x-oneui::easy-pie-chart id="pie2" :percent="45" bar-color="#eab308"/>
 						<div class="small text-muted mt-2">Pending</div>
 					</div>
 					<div class="col-4">
-						<x-oneui::easy-pie-chart id="pie3" :percent="90" color="#ef4444"/>
+						<x-oneui::easy-pie-chart id="pie3" :percent="90" bar-color="#ef4444"/>
 						<div class="small text-muted mt-2">Critical</div>
 					</div>
 				</div>

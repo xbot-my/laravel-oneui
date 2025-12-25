@@ -21,16 +21,16 @@ use Illuminate\View\Component;
 class Sortable extends Component
 {
     public function __construct(
-        public string $id = 'sortable-' . uniqid(),
+        public string $id = '',
         public ?string $group = null,
         public array $items = [],
         public ?string $handle = null, // CSS selector for drag handle
         public string $animation = '150ms',
         public bool $delayOnTouchOnly = true,
         public int $delay = 0,
-        public bool 'dragDisabled = false,
-        public bool 'dropDisabled = false,
-        public bool 'multiDrag = false,
+        public bool $dragDisabled = false,
+        public bool $dropDisabled = false,
+        public bool $multiDrag = false,
         public ?string $ghostClass = null,
         public ?string $chosenClass = null,
         public ?string $dragClass = null,
@@ -38,7 +38,12 @@ class Sortable extends Component
         public ?string $onEnd = null, // JavaScript callback
         public ?string $onSort = null, // JavaScript callback
         public array $options = [],
-    ) {}
+    ) {
+        // Generate unique ID if not provided
+        if ($this->id === '') {
+            $this->id = 'sortable-' . uniqid();
+        }
+    }
 
     /**
      * Get Sortable configuration as JavaScript object

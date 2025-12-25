@@ -17,7 +17,7 @@ use Illuminate\View\Component;
 class EasyPieChart extends Component
 {
     public function __construct(
-        public string $id = 'pie-' . uniqid(),
+        public string $id = '',
         public float|int $percent = 0,
         public int $size = 80,
         public string $barColor = '#3b82f6',
@@ -32,6 +32,11 @@ class EasyPieChart extends Component
         public string $labelColor = '#374151',
         public array $options = [],
     ) {
+        // Generate unique ID if not provided
+        if ($this->id === '') {
+            $this->id = 'pie-' . uniqid();
+        }
+
         // Clamp percent between 0 and 100
         $this->percent = max(0, min(100, (float) $percent));
     }

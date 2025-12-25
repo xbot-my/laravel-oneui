@@ -17,8 +17,8 @@ use Illuminate\View\Component;
 class Sparkline extends Component
 {
     public function __construct(
-        public string $id = 'sparkline-' . uniqid(),
-        public array $data = [],
+        public string $id = '',
+        public array $values = [],
         public string $type = 'line', // line, bar, tristate, discrete, bullet, pie, box
         public string $lineColor = '#3b82f6',
         public string $fillColor = 'transparent',
@@ -27,9 +27,14 @@ class Sparkline extends Component
         public ?string $tooltipFormat = null,
         public array $options = [],
     ) {
-        // Ensure data has values
-        if (empty($this->data)) {
-            $this->data = [0];
+        // Generate unique ID if not provided
+        if ($this->id === '') {
+            $this->id = 'sparkline-' . uniqid();
+        }
+
+        // Ensure values has data
+        if (empty($this->values)) {
+            $this->values = [0];
         }
     }
 

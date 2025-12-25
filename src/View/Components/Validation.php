@@ -23,7 +23,16 @@ class Validation extends Component
         public ?\Illuminate\View\ViewErrorBag $errors = null,
         public ?array $messages = null,
     ) {
-        $this->errors ??= request()->session()->get('errors') ?: app(\Illuminate\Contracts\View\Factory::class)->getShared()['errors'] ?? new \Illuminate\View\ViewErrorBag();
+        // Only set errors from session if not using custom messages and errors is null
+        if ($this->messages === null && $this->errors === null) {
+            try {
+                $this->errors = request()->session()->get('errors')
+                    ?? app(\Illuminate\Contracts\View\Factory::class)->getShared()['errors']
+                    ?? new \Illuminate\View\ViewErrorBag();
+            } catch (\Exception $e) {
+                $this->errors = new \Illuminate\View\ViewErrorBag();
+            }
+        }
     }
 
     public function hasErrors(): bool

@@ -19,10 +19,10 @@ use Illuminate\View\Component;
 class Tree extends Component
 {
     public function __construct(
-        public string $id = 'tree-' . uniqid(),
+        public string $id = '',
         public array $data = [],
         public bool $checkboxes = false,
-        public bool 'dragAndDrop = false,
+        public bool $dragAndDrop = false,
         public bool $expandAll = true,
         public int $expandedLevel = 1,
         public string $nodeKey = 'id',
@@ -31,7 +31,12 @@ class Tree extends Component
         public bool $selectable = true,
         public ?string $selected = null,
         public array $options = [],
-    ) {}
+    ) {
+        // Generate unique ID if not provided
+        if ($this->id === '') {
+            $this->id = 'tree-' . uniqid();
+        }
+    }
 
     /**
      * Render tree data to nested array structure

@@ -1,5 +1,4 @@
-<x-oneui::page>
-    <x-slot:title>{{ $title ?? 'Component Examples' }}</x-slot>
+<x-oneui::page :title="$title ?? 'Component Examples'">
     <x-slot:head>
         <link rel="stylesheet" href="{{ asset('vendor/oneui/js/plugins/highlightjs/styles/atom-one-dark.css') }}">
     </x-slot>
@@ -10,8 +9,8 @@
 
     <x-slot:content>
         <div class="content">
-            {{ $heading ?? '' }}
-            {{ $slot }}
+            {!! $heading ?? '' !!}
+            @yield('content')
         </div>
     </x-slot>
 
