@@ -29,7 +29,7 @@ use Illuminate\View\Component;
 class Carousel extends Component
 {
     public function __construct(
-        public string $id,
+        public ?string $id = null,
         public int $slidesToShow = 1,
         public int $slidesToScroll = 1,
         public bool $infinite = true,
@@ -57,6 +57,10 @@ class Carousel extends Component
         public array $breakpoints = [], // Responsive breakpoints [[breakpoint, settings]]
         public array $options = [],
     ) {
+        // Generate unique ID if not provided
+        if ($this->id === null) {
+            $this->id = 'carousel-' . uniqid();
+        }
     }
 
     /**

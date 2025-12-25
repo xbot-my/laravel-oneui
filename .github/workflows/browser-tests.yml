@@ -29,37 +29,14 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-interaction --no-progress
 
-      - name: Install Playwright browsers
-        run: |
-          npx playwright install chromium
-          npx playwright install-deps chromium
-
-      - name: Build testbench and start server
-        run: |
-          composer run build
-          php vendor/bin/testbench serve --ansi &
-          sleep 10
-          curl --retry 10 --retry-delay 2 -v http://127.0.0.1:8000
-
       - name: Run browser tests
         run: ./vendor/bin/pest tests/Browser/
         env:
           APP_ENV: testing
-          COMPOSER_PROCESS_TIMEOUT: 0
-
-      - name: Upload screenshots on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browser-screenshots-php-${{ matrix.php-version }}-laravel-${{ matrix.laravel-version }}
-          path: tests/Browser/Screenshots/
-          retention-days: 7
 
       - name: Upload test logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-logs-php-${{ matrix.php-version }}-laravel-${{ matrix.laravel-version }}
-          path: |
-            storage/logs/
-            tests/Browser/Screenshots/
+          path: storage/logs/

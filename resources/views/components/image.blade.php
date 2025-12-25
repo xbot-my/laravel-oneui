@@ -7,7 +7,7 @@
     alt="{{ $alt }}"
     class="{{ $imageClasses() }}"
     @if($style()) style="{{ $style() }}" @endif
-    loading="{{ loading() }}"
+    loading="{{ $loading }}"
     {{ $attributes->except(['class', 'style', 'loading']) }}
 >
 

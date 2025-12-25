@@ -35,21 +35,21 @@ class Dropzone extends Component
         public ?string $dictFallbackText = null,
         public ?string $dictFileTooBig = null,
         public ?string $dictInvalidFileType = null,
-        public ?string = $dictResponseError = null,
+        public ?string $dictResponseError = null,
         public ?string $dictCancelUpload = null,
         public ?string $dictCancelConfirmation = null,
         public ?string $dictRemoveFile = null,
         public ?string $dictMaxFilesExceeded = null,
         public bool $autoProcessQueue = true,
         public bool $uploadMultiple = false,
-        public bool = $parallelUploads = 2,
+        public int $parallelUploads = 2,
         public bool $clickable = true,
         public bool $createImageThumbnails = true,
         public int $thumbnailMethod = 0, // 0=crop, 1=contain, 2=scale
-        public bool $resizeWidth = null,
+        public ?int $resizeWidth = null,
         public ?int $resizeHeight = null,
         public string $resizeMethod = 'contain', // contain, crop
-        public bool $resizeQuality = 0.8,
+        public float $resizeQuality = 0.8,
         public array $options = [],
         public ?string $onSuccess = null, // JS callback
         public ?string $onError = null, // JS callback

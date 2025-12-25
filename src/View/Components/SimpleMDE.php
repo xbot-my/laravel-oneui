@@ -27,22 +27,22 @@ class SimpleMDE extends Component
         public bool $autofocus = false,
         public bool $spellChecker = true,
         public string $initialStatus = 'preview', // pristine, changed, sync
-        public bool = $autosave = false,
+        public bool $autosave = false,
         public ?string $autosaveUniqueId = null,
         public int $autosaveDelay = 10000,
         public bool $forceSync = false,
-        public string $indentWithTabs = false,
+        public bool $indentWithTabs = false,
         public int $tabSize = 4,
-        public bool = $lineWrapping = true,
+        public bool $lineWrapping = true,
         public string $theme = 'easymde', // easymde, dark
         public string $direction = 'ltr', // ltr, rtl
         public array $toolbar = [], // Custom toolbar buttons
-        public bool $hideIcons = [], // Icons to hide
-        public bool $showIcons = [], // Icons to show
-        public string $status = ['autosave', 'lines', 'words', 'cursor'],
+        public array $hideIcons = [], // Icons to hide
+        public array $showIcons = [], // Icons to show
+        public array $status = ['autosave', 'lines', 'words', 'cursor'],
         public array $options = [],
         public string $minHeight = '300px',
-        public bool = $shortcuts = true,
+        public bool $shortcuts = true,
     ) {
         $this->id = $id ?? $name;
     }

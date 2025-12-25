@@ -1,5 +1,5 @@
-<div {{ $attributes->merge(['class' => 'js-carousel']) }} id="{{ $id }}">
-    {{ $items }}
+<div class="js-carousel {{ $attributes->get('class') }}" id="{{ $id }}" {{ $attributes->except(['class', 'id']) }}>
+    {{ $slot }}
 </div>
 
 <script>

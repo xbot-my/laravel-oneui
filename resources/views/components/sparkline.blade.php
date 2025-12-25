@@ -1,7 +1,8 @@
-<span {{ $attributes->merge(['id' => $id, 'class' => 'oneui-sparkline']) }}
+<span id="{{ $id }}" class="oneui-sparkline {{ $attributes->get('class') }}"
     data-sparkline-config="{!! $sparklineConfig() !!}"
-    data-values="{{ implode(',', $data) }}"
+    data-values="{{ $dataJson() }}"
     style="display: inline-block; width: {{ $width }}px; height: {{ $height }}px;"
+    {{ $attributes->except(['class', 'id']) }}
 ></span>
 
 @once
@@ -11,7 +12,7 @@
     // Simple Canvas-based Sparkline Implementation
     function initSparkline(el) {
         const config = el.dataset.sparklineConfig ? JSON.parse(el.dataset.sparklineConfig) : {};
-        const values = el.dataset.values ? el.dataset.values.split(',').map(Number) : [];
+        const values = el.dataset.values ? JSON.parse(el.dataset.values) : [];
         const type = config.type || 'line';
         const width = config.width || 80;
         const height = config.height || 30;

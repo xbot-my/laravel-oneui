@@ -19,7 +19,8 @@ use Illuminate\View\Component;
 class DataList extends Component
 {
     public function __construct(
-        public array $items = [],
+        public ?array $items = null,
+        public ?array $data = null, // Alias for items
         public string $orientation = 'vertical', // vertical, horizontal
         public string $variant = 'default', // default, bordered, striped
         public bool $hover = false,
@@ -27,6 +28,13 @@ class DataList extends Component
         public ?string $valueClass = null,
         public array $options = [],
     ) {
+        // Use data as fallback for items
+        if ($this->items === null && $this->data !== null) {
+            $this->items = $this->data;
+        }
+        if ($this->items === null) {
+            $this->items = [];
+        }
     }
 
     /**

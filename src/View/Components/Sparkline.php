@@ -18,7 +18,7 @@ class Sparkline extends Component
 {
     public function __construct(
         public string $id = '',
-        public array $values = [],
+        public array $data = [],
         public string $type = 'line', // line, bar, tristate, discrete, bullet, pie, box
         public string $lineColor = '#3b82f6',
         public string $fillColor = 'transparent',
@@ -32,10 +32,18 @@ class Sparkline extends Component
             $this->id = 'sparkline-' . uniqid();
         }
 
-        // Ensure values has data
-        if (empty($this->values)) {
-            $this->values = [0];
+        // Ensure data has values
+        if (empty($this->data)) {
+            $this->data = [0];
         }
+    }
+
+    /**
+     * Get data as JSON string for blade template
+     */
+    public function dataJson(): string
+    {
+        return json_encode($this->data);
     }
 
     /**

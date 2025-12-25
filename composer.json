@@ -30,7 +30,8 @@
         "orchestra/testbench": "^9.0|^10.0",
         "laravel/pint": "^1.26",
         "laravel/boost": "*",
-        "spatie/laravel-ignition": "^2.9"
+        "spatie/laravel-ignition": "^2.9",
+        "orchestra/testbench-browser-kit": "^10.1"
     },
     "autoload": {
         "psr-4": {

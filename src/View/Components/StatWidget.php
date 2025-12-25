@@ -17,13 +17,18 @@ class StatWidget extends Component
 {
     public function __construct(
         public string|int|float $value,
-        public string $label,
+        public ?string $label = null,
+        public ?string $title = null, // Alias for label
         public ?string $icon = null,
         public ?string $color = null,
         public string $iconPosition = 'left',
         public ?string $href = null,
         public bool $link = true,
     ) {
+        // Use title as fallback for label
+        if ($this->label === null && $this->title !== null) {
+            $this->label = $this->title;
+        }
     }
 
     public function blockClasses(): string

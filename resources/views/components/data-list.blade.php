@@ -1,13 +1,25 @@
-<dl {{ $attributes->merge(['class' => $getContainerClasses()]) }}>
+<dl class="{{ $getContainerClasses() }} {{ $attributes->get('class') }}" {{ $attributes->except(['class']) }}>
     @foreach($items as $key => $value)
-        @if($orientation === 'horizontal')
-            <div class="row align-items-center mb-2">
-                <dt class="{{ $getLabelClass($key) }} col-sm-4">{{ $key }}</dt>
-                <dd class="{{ $getValueClass() }} col-sm-8">{{ $value }}</dd>
-            </div>
+        @if(is_array($value) && isset($value['title']) && isset($value['description']))
+            @if($orientation === 'horizontal')
+                <div class="row align-items-center mb-2">
+                    <dt class="{{ $getLabelClass($key) }} col-sm-4">{{ $value['title'] }}</dt>
+                    <dd class="{{ $getValueClass() }} col-sm-8">{{ $value['description'] }}</dd>
+                </div>
+            @else
+                <dt class="{{ $getLabelClass($key) }}">{{ $value['title'] }}</dt>
+                <dd class="{{ $getValueClass() }}">{{ $value['description'] }}</dd>
+            @endif
         @else
-            <dt class="{{ $getLabelClass($key) }}">{{ $key }}</dt>
-            <dd class="{{ $getValueClass() }}">{{ $value }}</dd>
+            @if($orientation === 'horizontal')
+                <div class="row align-items-center mb-2">
+                    <dt class="{{ $getLabelClass($key) }} col-sm-4">{{ $key }}</dt>
+                    <dd class="{{ $getValueClass() }} col-sm-8">{{ $value }}</dd>
+                </div>
+            @else
+                <dt class="{{ $getLabelClass($key) }}">{{ $key }}</dt>
+                <dd class="{{ $getValueClass() }}">{{ $value }}</dd>
+            @endif
         @endif
     @endforeach
 </dl>

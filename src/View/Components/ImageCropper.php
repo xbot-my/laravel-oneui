@@ -22,15 +22,15 @@ class ImageCropper extends Component
         public string $name,
         public ?string $id = null,
         public ?string $src = null,
-        public string $viewMode = 1, // 0, 1, 2, 3
+        public int $viewMode = 1, // 0, 1, 2, 3
         public int|float|null $aspectRatio = null,
         public bool $circular = false,
         public int $minCropBoxWidth = 0,
         public int $minCropBoxHeight = 0,
         public int $minContainerWidth = 200,
         public int $minContainerHeight = 100,
-        public bool $dragMode = true, // true for 'move', false for 'none', or 'crop'
-        public bool $autoCropArea = 0.8,
+        public string $dragMode = 'move', // 'move', 'crop', or 'none'
+        public float $autoCropArea = 0.8,
         public bool $restore = true,
         public bool $guides = true,
         public bool $center = true,

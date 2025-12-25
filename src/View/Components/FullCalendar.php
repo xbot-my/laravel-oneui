@@ -29,11 +29,11 @@ class FullCalendar extends Component
         public bool $selectMirror = true,
         public string $dir = 'ltr', // ltr or rtl
         public bool $navLinks = false,
-        public bool nowIndicator = false,
+        public bool $nowIndicator = false,
         public string $slotDuration = '00:30:00', // Time slot duration
         public string $slotMinTime = '00:00:00', // Business hours start
         public string $slotMaxTime = '24:00:00', // Business hours end
-        public int $scrollTime = '06:00:00', // Initial scroll time
+        public string $scrollTime = '06:00:00', // Initial scroll time
         public bool $weekends = true,
         public int $firstDay = 0, // 0 = Sunday, 1 = Monday, etc.
         public string $height = 'auto', // auto, parent, or specific height in px

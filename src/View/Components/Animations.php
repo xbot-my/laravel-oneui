@@ -68,7 +68,7 @@ class Animations extends Component
         public bool $infinite = false,
         public string $timing = 'ease', // linear, ease, ease-in, ease-out, ease-in-out
         public string $direction = 'normal', // normal, reverse, alternate, alternate-reverse
-        public bool = $fillMode = 'both', // none, forwards, backwards, both
+        public string $fillMode = 'both', // none, forwards, backwards, both
         public string $trigger = 'load', // load, hover, click, manual
         public ?string $class = null,
     ) {

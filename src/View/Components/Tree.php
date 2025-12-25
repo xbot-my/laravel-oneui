@@ -49,8 +49,8 @@ class Tree extends Component
             $hasChildren = !empty($node[$this->childrenKey]);
 
             $result[] = [
-                'id' => $node[$this->nodeKey],
-                'label' => $node[$this->labelKey],
+                'id' => $node[$this->nodeKey] ?? uniqid('node-'),
+                'label' => $node[$this->labelKey] ?? 'Unknown',
                 'level' => $level,
                 'hasChildren' => $hasChildren,
                 'expanded' => $level < $this->expandedLevel || ($this->expandAll && $hasChildren),

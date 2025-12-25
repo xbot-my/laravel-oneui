@@ -19,7 +19,7 @@ use Illuminate\View\Component;
 class Icons extends Component
 {
     public function __construct(
-        public string $icon,
+        public ?string $icon = null, // Optional - if not provided, uses slot content
         public ?string $title = null,
         public string $size = '', // '', lg, 2x, 3x, 4x, 5x
         public bool $fixedWidth = false,

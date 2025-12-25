@@ -67,7 +67,7 @@
 @endpush
 @endonce
 
-@push('scripts)
+@push('scripts')
 <script>
 (function() {
     const treeEl = document.getElementById('{{ $id }}');
