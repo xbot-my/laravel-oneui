@@ -70,6 +70,12 @@
         "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "clean-cache": [
+            "@php vendor/bin/testbench package:purge-skeleton --ansi",
+            "@php -r \"file_exists('vendor/orchestra/testbench-core/laravel/compiled.php') && @unlink('vendor/orchestra/testbench-core/laravel/compiled.php');\"",
+            "@php -r \"file_exists('bootstrap/cache/config.php') && @unlink('bootstrap/cache/config.php');\"",
+            "echo 'Done - Please refresh browser'"
+        ],
         "serve": [
             "Composer\\Config::disableProcessTimeout",
             "@build",
