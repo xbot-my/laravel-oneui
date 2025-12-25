@@ -13,7 +13,8 @@
 
 uses(XBot\OneUI\Tests\TestCase::class)
     ->in('Feature')
-    ->in('Browser');
+    ->in('Browser')
+    ->in('Unit');
 
 /*
 |--------------------------------------------------------------------------

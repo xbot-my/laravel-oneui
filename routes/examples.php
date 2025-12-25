@@ -30,4 +30,3 @@ Route::get('/media', fn() => view('oneui::examples.media'))->name('media');
 Route::get('/utilities', fn() => view('oneui::examples.utilities'))->name('utilities');
 Route::get('/alerts', fn() => view('oneui::examples.alerts'))->name('alerts');
 Route::get('/modals', fn() => view('oneui::examples.modals'))->name('modals');
-Route::get('/tables', fn() => view('oneui::examples.tables'))->name('tables');
