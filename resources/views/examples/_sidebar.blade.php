@@ -1,35 +1,64 @@
-<nav>
-    <h5 class="fs-xs text-uppercase text-muted fw-bold mb-2">基础组件</h5>
-    <ul class="nav nav-sm flex-column">
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.layout') }}">布局</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.forms') }}">表单</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.tables') }}">表格</a></li>
-    </ul>
+@php
+    $menuItems = [
+        [
+            'label' => '基础组件',
+            'icon' => 'fa fa-th-large',
+            'order' => 1,
+            'children' => [
+                ['label' => '布局', 'route' => 'oneui.examples.layout'],
+                ['label' => '表单', 'route' => 'oneui.examples.forms'],
+                ['label' => '高级表单', 'route' => 'oneui.examples.forms-advanced'],
+                ['label' => '表格', 'route' => 'oneui.examples.tables'],
+            ],
+        ],
+        [
+            'label' => '数据展示',
+            'icon' => 'fa fa-bar-chart',
+            'order' => 2,
+            'children' => [
+                ['label' => '卡片', 'route' => 'oneui.examples.cards'],
+                ['label' => '统计', 'route' => 'oneui.examples.metrics'],
+                ['label' => '图表', 'route' => 'oneui.examples.charts'],
+                ['label' => '列表', 'route' => 'oneui.examples.lists'],
+            ],
+        ],
+        [
+            'label' => '导航与交互',
+            'icon' => 'fa fa-sitemap',
+            'order' => 3,
+            'children' => [
+                ['label' => '导航', 'route' => 'oneui.examples.navigation'],
+                ['label' => '弹窗', 'route' => 'oneui.examples.modals'],
+            ],
+        ],
+        [
+            'label' => '反馈与通知',
+            'icon' => 'fa fa-bell',
+            'order' => 4,
+            'children' => [
+                ['label' => '警告', 'route' => 'oneui.examples.alerts'],
+                ['label' => '通知', 'route' => 'oneui.examples.notifications'],
+            ],
+        ],
+        [
+            'label' => '其他组件',
+            'icon' => 'fa fa-puzzle-piece',
+            'order' => 5,
+            'children' => [
+                ['label' => '日历', 'route' => 'oneui.examples.calendar'],
+                ['label' => '编辑器', 'route' => 'oneui.examples.editors'],
+                ['label' => '上传', 'route' => 'oneui.examples.upload'],
+                ['label' => '媒体', 'route' => 'oneui.examples.media'],
+                ['label' => '工具', 'route' => 'oneui.examples.utilities'],
+            ],
+        ],
+        [
+            'label' => '首页',
+            'route' => 'oneui.examples.index',
+            'icon' => 'fa fa-home',
+            'order' => 99,
+        ],
+    ];
+@endphp
 
-    <h5 class="fs-xs text-uppercase text-muted fw-bold mb-2 mt-4">数据展示</h5>
-    <ul class="nav nav-sm flex-column">
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.cards') }}">卡片</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.metrics') }}">统计</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.charts') }}">图表</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.lists') }}">列表</a></li>
-    </ul>
-
-    <h5 class="fs-xs text-uppercase text-muted fw-bold mb-2 mt-4">导航与交互</h5>
-    <ul class="nav nav-sm flex-column">
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.navigation') }}">导航</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.modals') }}">弹窗</a></li>
-    </ul>
-
-    <h5 class="fs-xs text-uppercase text-muted fw-bold mb-2 mt-4">反馈与通知</h5>
-    <ul class="nav nav-sm flex-column">
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.alerts') }}">警告</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.notifications') }}">通知</a></li>
-    </ul>
-
-    <h5 class="fs-xs text-uppercase text-muted fw-bold mb-2 mt-4">其他</h5>
-    <ul class="nav nav-sm flex-column">
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.media') }}">媒体</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.utilities') }}">工具</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('oneui.examples.index') }}">首页</a></li>
-    </ul>
-</nav>
+<x-oneui::sidebar-menu :data="$menuItems" />
