@@ -1,8 +1,8 @@
 @if($label)
-    <label class="form-label" for="{{ $getId() }}">{{ $label }}</label>
+    <label class="form-label" for="{{ $id ?? $name }}">{{ $label }}</label>
 @endif
 
-<textarea {{ $attributes->merge(['name' => $name, 'id' => $getId()]) }} class="simplemde-textarea">{{ $value ?? '' }}</textarea>
+<textarea name="{{ $name }}" id="{{ $id ?? $name }}" {{ $attributes->except(['name', 'id']) }} class="simplemde-textarea">{{ $value ?? '' }}</textarea>
 
 @if(!$theme || $theme === 'easymde')
     <link rel="stylesheet" href="{{ asset('vendor/oneui/js/plugins/simplemde/css/simplemde.min.css') }}">
@@ -17,7 +17,7 @@
 @endif
 
 document.addEventListener('DOMContentLoaded', function() {
-    const textarea = document.getElementById('{{ $getId() }}');
+    const textarea = document.getElementById('{{ $id ?? $name }}');
 
     if (textarea && typeof SimpleMDE !== 'undefined') {
         const options = {!! $editorOptions() !!};

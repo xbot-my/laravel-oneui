@@ -1,4 +1,4 @@
-<div class="chart-js-container {{ $attributes->get('class') }}" {{ $attributes->except(['class']) }} style="height: {{ $height }}px;">
+<div class="chart-js-container {{ $attributes->get('class') }}" style="height: {{ $height }}px;">
     <canvas id="{{ $id }}"></canvas>
 </div>
 
