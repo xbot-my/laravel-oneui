@@ -12,50 +12,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('examples')->name('examples.')->group(function () {
-    // Index - Component directory
-    Route::get('/', fn() => view('examples.index'))->name('index');
-
-    // Layout components
-    Route::get('/layout', fn() => view('examples.layout'))->name('layout');
-
-    // Form components
-    Route::get('/forms', fn() => view('examples.forms'))->name('forms');
-
-    // Data display
-    Route::get('/tables', fn() => view('examples.tables'))->name('tables');
-    Route::get('/charts', fn() => view('examples.charts'))->name('charts');
-    Route::get('/metrics', fn() => view('examples.metrics'))->name('metrics');
-    Route::get('/lists', fn() => view('examples.lists'))->name('lists');
-    Route::get('/cards', fn() => view('examples.cards'))->name('cards');
-
-    // Specialized components
-    Route::get('/calendar', fn() => view('examples.calendar'))->name('calendar');
-    Route::get('/editors', fn() => view('examples.editors'))->name('editors');
-    Route::get('/upload', fn() => view('examples.upload'))->name('upload');
-
-    // Navigation
-    Route::get('/navigation', fn() => view('examples.navigation'))->name('navigation');
-
-    // Feedback & notifications
-    Route::get('/notifications', fn() => view('examples.notifications'))->name('notifications');
-
-    // Media
-    Route::get('/media', fn() => view('examples.media'))->name('media');
-
-    // Utilities
-    Route::get('/utilities', fn() => view('examples.utilities'))->name('utilities');
-});
-
-// Legacy routes (keep for backward compatibility)
-Route::prefix('oneui')->group(function () {
-    Route::get('/buttons', fn() => view('examples.forms'))->name('oneui.buttons');
-    Route::get('/alerts', fn() => view('examples.notifications'))->name('oneui.alerts');
-    Route::get('/forms', fn() => view('examples.forms'))->name('oneui.forms');
-    Route::get('/modals', fn() => view('examples.notifications'))->name('oneui.modals');
-    Route::get('/tables', fn() => view('examples.tables'))->name('oneui.tables');
-    Route::get('/navigation', fn() => view('examples.navigation'))->name('oneui.navigation');
-    Route::get('/feedback', fn() => view('examples.notifications'))->name('oneui.feedback');
-    Route::get('/layout', fn() => view('examples.layout'))->name('oneui.layout');
-    Route::get('/stats', fn() => view('examples.metrics'))->name('oneui.stats');
-});
+Route::get('/', fn() => view('oneui::examples.index'))->name('index');
+Route::get('/layout', fn() => view('oneui::examples.layout'))->name('layout');
+Route::get('/forms', fn() => view('oneui::examples.forms'))->name('forms');
+Route::get('/buttons', fn() => view('oneui::examples.buttons'))->name('buttons');
+Route::get('/tables', fn() => view('oneui::examples.tables'))->name('tables');
+Route::get('/charts', fn() => view('oneui::examples.charts'))->name('charts');
+Route::get('/metrics', fn() => view('oneui::examples.metrics'))->name('metrics');
+Route::get('/lists', fn() => view('oneui::examples.lists'))->name('lists');
+Route::get('/cards', fn() => view('oneui::examples.cards'))->name('cards');
+Route::get('/calendar', fn() => view('oneui::examples.calendar'))->name('calendar');
+Route::get('/editors', fn() => view('oneui::examples.editors'))->name('editors');
+Route::get('/upload', fn() => view('oneui::examples.upload'))->name('upload');
+Route::get('/navigation', fn() => view('oneui::examples.navigation'))->name('navigation');
+Route::get('/notifications', fn() => view('oneui::examples.notifications'))->name('notifications');
+Route::get('/media', fn() => view('oneui::examples.media'))->name('media');
+Route::get('/utilities', fn() => view('oneui::examples.utilities'))->name('utilities');
+Route::get('/alerts', fn() => view('oneui::examples.alerts'))->name('alerts');
+Route::get('/modals', fn() => view('oneui::examples.modals'))->name('modals');
+Route::get('/tables', fn() => view('oneui::examples.tables'))->name('tables');

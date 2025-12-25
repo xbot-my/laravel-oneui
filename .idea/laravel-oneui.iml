@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/blade-ui-kit/src" isTestSource="false" packagePrefix="BladeUIKit\" />
       <sourceFolder url="file://$MODULE_DIR$/blade-ui-kit/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="XBot\OneUI\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="XBot\OneUI\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/workbench/app" isTestSource="true" packagePrefix="Workbench\App\" />
       <sourceFolder url="file://$MODULE_DIR$/workbench/database/factories" isTestSource="true" packagePrefix="Workbench\Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/workbench/database/seeders" isTestSource="true" packagePrefix="Workbench\Database\Seeders\" />
@@ -14,6 +14,8 @@
       <excludeFolder url="file://$MODULE_DIR$/tests/Browser/Screenshots" />
       <excludeFolder url="file://$MODULE_DIR$/tests/Browser/Traces" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/resources/assets/_scss/bootstrap/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/resources/assets/_scss/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

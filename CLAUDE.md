@@ -12,7 +12,6 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - laravel/framework - v12.44.0
 - pestphp/pest - v4.2.0
 - orchestra/testbench - v10.8.0
-- xbot-my/laravel-oneui - dev-master
 
 ## Conventions
 - You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, naming.
@@ -35,6 +34,7 @@ This application is a Laravel application and its main Laravel ecosystems packag
 ## Documentation Files
 - You must only create documentation files if explicitly requested by the user.
 
+
 ## Example Pages
 - When adding new component examples to `resources/views/examples/*.blade.php`, ALWAYS include both:
   1. The rendered component preview inside `<x-oneui::code-example>`
@@ -55,10 +55,6 @@ This application is a Laravel application and its main Laravel ecosystems packag
 ## Component Development Roadmap
 - **REFERENCE**: `COMPONENT_STATUS.md` - Official component implementation status and priority roadmap
 - Before implementing new components, always check COMPONENT_STATUS.md for:
-  1. Current implementation status (45/104 components, 43% complete)
-  2. Priority phases (Phase 1-4 roadmap)
-  3. Third-party library dependencies
-  4. OneUI source file mappings
 - After implementing a component, update its status in COMPONENT_STATUS.md
 - Follow the implementation phases in priority order:
   - Phase 1: Essential UI (Tooltip, Popover, Switch, Ribbon, MegaMenu, HorizontalNav)
