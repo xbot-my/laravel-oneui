@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace XBot\OneUI\View\Components;
 
+use Illuminate\Support\Facades\Request;
 use Illuminate\View\Component;
 use XBot\OneUI\Support\DataAdapter;
 use XBot\OneUI\Support\DataItem;
@@ -38,6 +39,11 @@ class SidebarMenu extends Component
     protected function processItems(): void
     {
         $items = $this->data;
+        $currentUrl = Request::url();
+        $currentRoute = Request::route()?->getName();
+
+        // 自动检测 active 状态
+        $items = $this->markActiveItems($items, $currentUrl, $currentRoute);
 
         // 排序
         if ($this->sortByOrder) {
@@ -46,6 +52,66 @@ class SidebarMenu extends Component
 
         $adapter = new DataAdapter($items);
         $this->items = $adapter->toItems();
+    }
+
+    /**
+     * 标记当前活动的菜单项
+     */
+    protected function markActiveItems(array $items, string $currentUrl, ?string $currentRoute): array
+    {
+        foreach ($items as &$item) {
+            // 检查当前项是否激活
+            $isActive = $this->isItemActive($item, $currentUrl, $currentRoute);
+            if ($isActive) {
+                $item['active'] = true;
+            }
+
+            // 递归检查子项
+            if (isset($item['children']) && is_array($item['children'])) {
+                $item['children'] = $this->markActiveItems($item['children'], $currentUrl, $currentRoute);
+
+                // 如果有子项激活，父项也标记为 open
+                foreach ($item['children'] as $child) {
+                    if (isset($child['active']) && $child['active']) {
+                        $item['open'] = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return $items;
+    }
+
+    /**
+     * 检查菜单项是否是当前活动页面
+     */
+    protected function isItemActive(array $item, string $currentUrl, ?string $currentRoute): bool
+    {
+        // 如果已经手动设置了 active，使用它
+        if (isset($item['active']) && $item['active'] === true) {
+            return true;
+        }
+
+        // 检查路由名称匹配
+        if (isset($item['route']) && $currentRoute) {
+            if ($item['route'] === $currentRoute) {
+                return true;
+            }
+        }
+
+        // 检查 URL 匹配
+        if (isset($item['url'])) {
+            if ($item['url'] === $currentUrl) {
+                return true;
+            }
+            // 检查是否是当前路径的前缀（用于匹配 /oneui/examples 匹配 /oneui/examples/forms）
+            if (str_starts_with($currentUrl, rtrim($item['url'], '/'))) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
