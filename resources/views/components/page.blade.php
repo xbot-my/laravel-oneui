@@ -147,9 +147,7 @@
             {{-- Sidebar Scrolling --}}
             <div class="js-sidebar-scroll">
                 <div class="content-side">
-                    <ul class="nav-main">
-                        {{ $sidebar ?? '' }}
-                    </ul>
+                    {{ $sidebar ?? '' }}
                 </div>
             </div>
         </nav>
