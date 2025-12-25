@@ -13,8 +13,11 @@
 
 uses(XBot\OneUI\Tests\TestCase::class)
     ->in('Feature')
-    ->in('Browser')
     ->in('Unit');
+
+// Note: Browser tests should NOT inherit TestCase
+// They use Pest Browser's Browsable trait with __markAsBrowserTest()
+// which properly bootstraps the HTTP server
 
 /*
 |--------------------------------------------------------------------------
