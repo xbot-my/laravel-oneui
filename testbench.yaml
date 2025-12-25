@@ -21,6 +21,7 @@ workbench:
     components: true
     factories: true
     views: true
+    routes: true
   build:
     - asset-publish
     - create-sqlite-db

@@ -7,6 +7,20 @@
   </component>
   <component name="LaravelIdeaMainSettings">
     <option name="appDirectory" value="src" />
+    <option name="codeGeneration">
+      <LaravelCodeGeneration>
+        <option name="generationStringSettings">
+          <map>
+            <entry key="createConsoleCommand:classSuffix" value="" />
+          </map>
+        </option>
+      </LaravelCodeGeneration>
+    </option>
     <option name="frameworkFound" value="true" />
+    <option name="views">
+      <LaravelViews>
+        <option name="defaultViewsNamespace" value="oneui" />
+      </LaravelViews>
+    </option>
   </component>
 </project>
