@@ -15,7 +15,13 @@ use XBot\OneUI\Support\ItemCollection;
 /**
  * Table Component
  *
- * Supports data-driven table rendering, automatically handles array, Collection, Eloquent, and Paginator.
+ * Data-driven table component with automatic column detection, formatters, and pagination support.
+ * Handles arrays, Collections, Eloquent models, and Paginators automatically.
+ *
+ * Usage:
+ * <x-oneui::table :data="$users" :columns="['name', 'email', 'created_at']" />
+ * <x-oneui::table :data="$items" :columns="['title' => ['label' => 'Title'], 'price']" :striped="true" />
+ * <x-oneui::table :data="$posts" :columns="['title', 'published_at' => ['format' => 'date']" />
  */
 class Table extends Component
 {
