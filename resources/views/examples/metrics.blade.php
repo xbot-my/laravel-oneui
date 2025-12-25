@@ -5,7 +5,7 @@
 	</x-slot>
 
 	<x-slot:sidebar>
-		@include('oneui::partials.sidebar')
+		@include('oneui::examples._sidebar')
 	</x-slot:sidebar>
 
 	<x-slot:content>

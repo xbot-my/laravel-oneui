@@ -1,4 +1,4 @@
-{{-- 共享的 OneUI 示例页面侧边栏 --}}
+{{-- Shared OneUI examples sidebar (legacy, use _sidebar.blade.php instead) --}}
 @php
     $currentPath = request()->path();
 @endphp
