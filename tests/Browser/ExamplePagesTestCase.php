@@ -10,6 +10,14 @@ use XBot\OneUI\OneUIServiceProvider;
 
 abstract class ExamplePagesTestCase extends TestCase
 {
+    /**
+     * Pages that require JavaScript and should be skipped in CI
+     */
+    protected array $jsOnlyPages = [
+        'charts',      // ChartJS requires JavaScript
+        'editors',     // CKEditor/SimpleMDE require JavaScript
+    ];
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -40,5 +48,21 @@ abstract class ExamplePagesTestCase extends TestCase
                 require $routesFile;
             });
         }
+    }
+
+    /**
+     * Check if running in CI environment
+     */
+    protected function isCI(): bool
+    {
+        return getenv('CI') === 'true' || getenv('GITHUB_ACTIONS') === 'true';
+    }
+
+    /**
+     * Check if a page requires JavaScript
+     */
+    protected function isJsOnlyPage(string $page): bool
+    {
+        return in_array($page, $this->jsOnlyPages);
     }
 }

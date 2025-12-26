@@ -64,6 +64,10 @@ class ExamplePagesTest extends ExamplePagesTestCase
 
     public function test_charts_page_renders(): void
     {
+        if ($this->isCI() && $this->isJsOnlyPage('charts')) {
+            $this->markTestSkipped('ChartJS component requires JavaScript - skipped in CI');
+        }
+
         $this->visit('/oneui/examples/charts');
         $this->assertResponseStatus(200);
         $this->see('Charts');
@@ -106,6 +110,10 @@ class ExamplePagesTest extends ExamplePagesTestCase
 
     public function test_editors_page_loads(): void
     {
+        if ($this->isCI() && $this->isJsOnlyPage('editors')) {
+            $this->markTestSkipped('Editor components require JavaScript - skipped in CI');
+        }
+
         $this->visit('/oneui/examples/editors');
         $this->assertResponseStatus(200);
         $this->see('Editors');
