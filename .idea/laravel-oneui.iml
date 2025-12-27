@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/blade-ui-kit/src" isTestSource="false" packagePrefix="BladeUIKit\" />
       <sourceFolder url="file://$MODULE_DIR$/blade-ui-kit/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/blade-ui-kit/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="XBot\OneUI\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/workbench/app" isTestSource="true" packagePrefix="Workbench\App\" />

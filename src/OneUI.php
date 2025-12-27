@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace XBot\OneUI;
 
 use Exception;
+use XBot\OneUI\Enums\Package;
 use Illuminate\Foundation\Application;
 use Illuminate\Container\Attributes\Singleton;
 
@@ -61,5 +62,20 @@ BASE64;
     public static function banner(): string
     {
         return str(self::BANNER)->fromBase64()->toString();
+    }
+    
+    /**
+     * Get the package names.
+     *
+     * @return array
+     */
+    public static function packages( ?string $name = null ): array
+    {
+        if ($name) {
+            return Package::get($name);
+        }
+        
+        
+        return Package::map(fn( Package $package ) => $package->packageName());
     }
 }
